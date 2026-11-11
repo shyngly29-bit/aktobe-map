@@ -1,0 +1,447 @@
+<title>Ақтөбе ескерткіштері</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Unbounded:wght@500;700&display=swap">
+<style>
+/* Layout: full-height vector map of the city on the left, catalogue + detail card on the right (stacked on phones). */
+:root{
+  --bg:#E6ECEA; --ground:#E9EEEC; --road:#FFFFFF; --road-edge:#C9D2CF; --res:#F7F9F8;
+  --water:#93BFD8; --park:#CADFC0; --rail:#8E9A97;
+  --ink:#17262A; --muted:#566765; --panel:#F6F8F7; --line:#D3DCD9; --chip:#FFFFFF;
+  --gold:#A8701A; --mem:#3F5E6E; --rel:#6A4A97; --mus:#A0304A; --tour:#0F6B5C; --tour-ink:#FFFFFF;
+  --sel:#17262A; --shadow:0 6px 24px rgba(23,38,42,.16);
+  --f-display:"Unbounded","Segoe UI",system-ui,sans-serif;
+  --f-body:"Golos Text","Segoe UI",system-ui,-apple-system,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11181A; --ground:#141C1E; --road:#2E3A3D; --road-edge:#2E3A3D; --res:#232D30;
+  --water:#1E4258; --park:#1B2D22; --rail:#56625F;
+  --ink:#E3EBE8; --muted:#97A7A4; --panel:#172022; --line:#2A3538; --chip:#1D282B;
+  --gold:#E0A84A; --mem:#86A9BA; --rel:#AE8DE0; --mus:#E27A92; --tour:#3FB59C; --tour-ink:#0B1A17;
+  --sel:#E3EBE8; --shadow:0 6px 24px rgba(0,0,0,.5); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11181A; --ground:#141C1E; --road:#2E3A3D; --road-edge:#2E3A3D; --res:#232D30;
+  --water:#1E4258; --park:#1B2D22; --rail:#56625F;
+  --ink:#E3EBE8; --muted:#97A7A4; --panel:#172022; --line:#2A3538; --chip:#1D282B;
+  --gold:#E0A84A; --mem:#86A9BA; --rel:#AE8DE0; --mus:#E27A92; --tour:#3FB59C; --tour-ink:#0B1A17;
+  --sel:#E3EBE8; --shadow:0 6px 24px rgba(0,0,0,.5); color-scheme:dark}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5}
+*{box-sizing:border-box}
+.app{display:grid;grid-template-columns:minmax(0,1fr) 400px;height:100%}
+.mapwrap{position:relative;overflow:hidden;background:var(--ground);touch-action:none;cursor:grab;min-width:0}
+.mapwrap.drag{cursor:grabbing}
+svg#map{width:100%;height:100%;display:block;user-select:none}
+.m-water{fill:var(--water);stroke:none}
+.m-park{fill:var(--park);stroke:none}
+.m-river{fill:none;stroke:var(--water);stroke-width:5px;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round}
+.m-stream{fill:none;stroke:var(--water);stroke-width:2.5px;vector-effect:non-scaling-stroke}
+.m-rail{fill:none;stroke:var(--rail);stroke-width:3px;vector-effect:non-scaling-stroke}
+.m-rail2{fill:none;stroke:var(--ground);stroke-width:1.4px;stroke-dasharray:6 6;vector-effect:non-scaling-stroke}
+.m-res{fill:none;stroke:var(--res);stroke-width:1.3px;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.m-ter{fill:none;stroke:var(--road);stroke-width:2.4px;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.m-sec{fill:none;stroke:var(--road);stroke-width:3.6px;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.m-pri{fill:none;stroke:var(--road);stroke-width:5.5px;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.m-lbls{display:none}
+.zoomed .m-lbls{display:inline}
+.m-lbl{font-family:var(--f-body);font-size:6px;fill:var(--muted);paint-order:stroke;stroke:var(--ground);stroke-width:2px;letter-spacing:.02em}
+.m-river-lbl{font-family:var(--f-body);font-style:italic;font-size:13px;fill:var(--water);filter:brightness(.7)}
+.mk{cursor:pointer}
+.mk circle.dot{stroke:var(--ground);stroke-width:2.5}
+.mk .ring{fill:none;stroke:var(--sel);stroke-width:2.5;opacity:0}
+.mk.on .ring{opacity:1}
+.mk.dim{opacity:.18}
+.mk text{font-family:var(--f-body);font-weight:600;font-size:9px;fill:#fff;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.mk:focus{outline:none}.mk:focus-visible .ring{opacity:1;stroke-dasharray:3 2}
+.c-mon{fill:var(--gold)} .c-mem{fill:var(--mem)} .c-rel{fill:var(--rel)} .c-mus{fill:var(--mus)}
+.ctrl{position:absolute;right:calc(12px + env(safe-area-inset-right,0px));top:calc(12px + env(safe-area-inset-top,0px));display:flex;flex-direction:column;gap:6px}
+.ctrl button{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:20px;line-height:1;cursor:pointer;box-shadow:var(--shadow)}
+.ctrl button:focus-visible{outline:2px solid var(--tour);outline-offset:2px}
+.attrib{position:absolute;left:8px;bottom:6px;font-size:11px;color:var(--muted)}
+.compass{position:absolute;left:14px;top:14px;font-family:var(--f-display);font-size:11px;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:0;pointer-events:none}
+.compass b{display:block;width:2px;height:22px;background:linear-gradient(var(--ink) 50%,var(--muted) 50%)}
+
+.side{background:var(--panel);border-left:1px solid var(--line);display:flex;flex-direction:column;min-height:0;min-width:0}
+.head{padding:20px max(20px,env(safe-area-inset-right,0px)) 14px 20px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-family:var(--f-display);font-weight:700;font-size:24px;line-height:1.15;margin:4px 0 6px;text-wrap:balance}
+.sub{color:var(--muted);font-size:13.5px;margin:0}
+.tools{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.search{width:100%;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--chip);color:var(--ink);font:inherit}
+.search:focus{outline:2px solid var(--tour);outline-offset:1px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:var(--chip);color:var(--ink);font:inherit;font-size:13px;cursor:pointer}
+.chip i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.chip[aria-pressed="false"]{opacity:.45}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;flex:none}
+.lang button{border:none;background:transparent;color:var(--muted);font:inherit;font-size:12px;font-weight:600;letter-spacing:.06em;padding:4px 10px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--panel)}
+.lang button:focus-visible{outline:2px solid var(--tour)}
+.toprow{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.chip:focus-visible{outline:2px solid var(--tour);outline-offset:1px}
+.scroll{overflow:auto;flex:1;min-height:0}
+.detail{padding:18px 20px;border-bottom:1px solid var(--line);background:var(--chip)}
+.detail[hidden]{display:none}
+.d-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.d-cat{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.d-name{font-family:var(--f-display);font-weight:500;font-size:19px;line-height:1.25;margin:4px 0 2px;text-wrap:balance}
+.d-ru{color:var(--muted);font-size:13.5px;margin:0 0 10px}
+.d-text{margin:0 0 12px}
+.d-code{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.x{border:none;background:transparent;color:var(--muted);font-size:22px;line-height:1;cursor:pointer;padding:2px 6px;border-radius:6px}
+.x:focus-visible{outline:2px solid var(--tour)}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border-radius:10px;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:13.5px;font-weight:500;background:var(--panel)}
+.btn.tour{background:var(--tour);border-color:var(--tour);color:var(--tour-ink)}
+.btn:focus-visible{outline:2px solid var(--tour);outline-offset:2px}
+.btn svg{width:16px;height:16px;flex:none}
+.sec-h{font-family:var(--f-display);font-weight:500;font-size:13px;letter-spacing:.04em;padding:16px 20px 6px;margin:0;color:var(--muted)}
+.list{list-style:none;margin:0;padding:0 8px 8px}
+.list li button{width:100%;display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:10px;align-items:center;text-align:left;padding:8px 12px;border:none;border-radius:10px;background:transparent;color:var(--ink);font:inherit;cursor:pointer}
+.list li button:hover,.list li button.on{background:var(--chip)}
+.list li button:focus-visible{outline:2px solid var(--tour)}
+.list .n{width:22px;height:22px;border-radius:50%;color:#fff;font-size:11px;font-weight:600;display:grid;place-items:center;font-variant-numeric:tabular-nums}
+.list .t{min-width:0}
+.list .t b{display:block;font-weight:500;font-size:14px;line-height:1.3}
+.list .t span{display:block;color:var(--muted);font-size:12.5px;line-height:1.3}
+.list .has3d{font-size:10.5px;font-weight:600;letter-spacing:.06em;color:var(--tour);border:1px solid currentColor;border-radius:6px;padding:1px 5px}
+.empty{padding:8px 20px;color:var(--muted)}
+.tours{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:4px 20px 20px}
+.tcard{display:flex;flex-direction:column;gap:2px;padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--chip);color:var(--ink);text-decoration:none;min-width:0}
+.tcard b{font-weight:500;font-size:13.5px;line-height:1.3}
+.tcard span{font-size:12px;color:var(--muted)}
+.tcard em{font-style:normal;font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--tour);margin-bottom:2px}
+.tcard:focus-visible{outline:2px solid var(--tour)}
+.note{padding:0 20px 24px;color:var(--muted);font-size:12px}
+.bg-mon{background:var(--gold)}.bg-mem{background:var(--mem)}.bg-rel{background:var(--rel)}.bg-mus{background:var(--mus)}
+.t-mon{color:var(--gold)}.t-mem{color:var(--mem)}.t-rel{color:var(--rel)}.t-mus{color:var(--mus)}
+@media (max-width:820px){
+  .app{grid-template-columns:1fr;grid-template-rows:56% minmax(0,1fr)}
+  .side{border-left:none;border-top:1px solid var(--line)}
+  .head{padding:14px max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px))}
+  h1{font-size:20px}
+  .sub{display:none}
+  .detail,.sec-h,.tours,.note,.empty{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+}
+@media (prefers-reduced-motion:no-preference){.mk circle.dot{transition:r .15s}}
+</style>
+
+<div class="app">
+  <div class="mapwrap" id="wrap">
+    <svg id="map" viewBox="0 0 __W__ __H__" preserveAspectRatio="xMidYMid meet" role="application" aria-label="Карта центра Актобе с памятниками">
+      <g id="world">__SVG__
+        <g id="markers"></g>
+      </g>
+    </svg>
+    <div class="compass" aria-hidden="true">С<b></b></div>
+    <div class="ctrl">
+      <button id="zin" aria-label="Приблизить">+</button>
+      <button id="zout" aria-label="Отдалить">−</button>
+      <button id="zreset" aria-label="Показать весь город" style="font-size:15px">⤢</button>
+    </div>
+    <div class="attrib" data-i="attrib"></div>
+  </div>
+
+  <aside class="side">
+    <div class="head">
+      <div class="toprow"><div class="eyebrow" data-i="eyebrow">Тарихи-мәдени мұра</div><div class="lang" role="group" aria-label="Тіл / Язык"><button type="button" data-lang="kk" aria-pressed="true">ҚАЗ</button><button type="button" data-lang="ru" aria-pressed="false">РУС</button></div></div>
+      <h1>Ақтөбе ескерткіштері</h1>
+      <p class="sub" data-i="sub"></p>
+      <div class="tools">
+        <input class="search" id="q" type="search" placeholder="" aria-label="">
+        <div class="chips" id="chips"></div>
+      </div>
+    </div>
+    <div class="scroll" id="scroll">
+      <section class="detail" id="detail" hidden aria-live="polite"></section>
+      <h2 class="sec-h" id="listh">Все места</h2>
+      <ul class="list" id="list"></ul>
+      <p class="empty" id="empty" hidden data-i="empty"></p>
+      <h2 class="sec-h" data-i="toursh"></h2>
+      <div class="tours" id="tours"></div>
+      <p class="note" data-i="note"></p>
+    </div>
+  </aside>
+</div>
+
+<script>
+const LON0=__LON0__,LAT1=__LAT1__,KX=__KX__,KY=__KY__,W=__W__,H=__H__;
+const proj=(lat,lon)=>[(lon-LON0)*KX,(LAT1-lat)*KY];
+
+const CATS={
+  mon:{n:"Ескерткіштер",ru:"Памятники"},
+  mem:{n:"Мемориалдар",ru:"Мемориалы"},
+  rel:{n:"Діни ғимараттар",ru:"Храмы и мечети"},
+  mus:{n:"Мұражайлар",ru:"Музеи"}
+};
+const TOURS={
+  nurgasyr:{t:"«Нұр Ғасыр» мешіті",tr:"Мечеть «Нур Гасыр»",sk:"Мешіттің іші мен сырты",s:"Внутри и снаружи мечети",u:"https://www.visitaktobe.kz/tours/mechet/index.html"},
+  sobor:{t:"Әулие Николай соборы",tr:"Никольский собор",sk:"Кафедралды собор",s:"Кафедральный собор",u:"https://www.visitaktobe.kz/tours/sobor/index.html"},
+  air:{t:"Ақтөбе жоғарыдан",tr:"Актобе с высоты",sk:"Қаланың әуе панорамалары",s:"Аэропанорамы города",u:"https://www.visitaktobe.kz/tours/aktobe_air/index.html"},
+  abai:{t:"Абай аллеясы",tr:"Аллея Абая",sk:"Абай аллеясы және Триатлон саябағы",s:"Аллея Абая и Триатлон-парк",u:"https://www.visitaktobe.kz/tours/aktobe_prospekt/index.html"},
+  arbat:{t:"Үлкен Арбат",tr:"Большой Арбат",sk:"Жаяу жүргіншілер көшесі",s:"Пешеходная улица",u:"https://www.visitaktobe.kz/tours/aktobe_arbat/index.html"},
+  bulvar:{t:"Су-жасыл бульвар",tr:"Водно-зелёный бульвар",sk:"Су-жасыл бульвар",s:"Водно-зелёный бульвар",u:"https://www.visitaktobe.kz/tours/vzbulvar/index.html"}
+};
+// c: category, code: number on the paper tourist map
+const P=[
+ {c:"mon",code:"Е5",kk:"Әбілқайыр хан ескерткіші",ru:"Памятник Абулхаир-хану",lat:50.30018,lon:57.15406,
+  d:"Әбілқайыр (1693–1748) — хан Младшего жуза и полководец, один из руководителей борьбы с джунгарами. В 1731 году он принял российское подданство, это повлияло на всю дальнейшую историю края.",
+  dk:"Әбілқайыр (1693–1748) — Кіші жүздің ханы, қолбасшы, жоңғарларға қарсы күрестің басшыларының бірі. 1731 жылы Ресей империясының қол астына кірді, бұл шешім өлкенің кейінгі тарихына үлкен әсер етті."},
+ {c:"mon",code:"Е6",kk:"Жалаңтөс баһадүр ескерткіші",ru:"Памятник Жалантос-батыру",lat:50.29374,lon:57.19792,
+  d:"Жалаңтөс Сейітқұлұлы (около 1576–1656) — батыр и полководец из рода Алимулы, правитель Самарканда. По его приказу построены медресе Шердор и Тилля-Кари на площади Регистан.",
+  dk:"Жалаңтөс Сейітқұлұлы (шамамен 1576–1656) — Әлімұлы руынан шыққан батыр, қолбасшы, Самарқанд билеушісі. Оның бұйрығымен Регистан алаңындағы Шердор және Тілла-Қари медреселері салынды."},
+ {c:"mon",code:"Е13",kk:"Әйтеке би ескерткіші",ru:"Памятник Айтеке би",lat:50.28363,lon:57.23,
+  d:"Әйтеке би Байбекұлы — один из трёх великих биев казахского народа, вместе с Төле би и Қазыбек би. Он участвовал в составлении свода законов «Жеті жарғы» и был судьёй Младшего жуза.",
+  dk:"Әйтеке би Байбекұлы — Төле би мен Қазыбек бимен қатар қазақ халқының үш ұлы биінің бірі. «Жеті жарғы» заңдар жинағын жасауға қатысып, Кіші жүздің биі болды."},
+ {c:"mon",code:"Е10",kk:"Мөңке би ескерткіші",ru:"Памятник Монке би",lat:50.28868,lon:57.16681,
+  d:"Мөңке би Тілеуұлы (1675–1756) — би, оратор и жырау из рода Табын. Его толғау-предсказания о будущем казахской степи передаются из поколения в поколение.",
+  dk:"Мөңке би Тілеуұлы (1675–1756) — Табын руынан шыққан би, шешен әрі жырау. Оның қазақ даласының болашағы туралы болжам-толғаулары ұрпақтан ұрпаққа жетті."},
+ {c:"mon",code:"Е3",kk:"Тілеу батыр ескерткіші",ru:"Памятник Тлеу-батыру",lat:50.31175,lon:57.14619,
+  d:"Памятник батыру Тілеу, одному из защитников казахских земель. Стоит в северной части города, недалеко от мемориала Жубановых.",
+  dk:"Қазақ жерін қорғаған батырлардың бірі Тілеу батырға қойылған ескерткіш. Қаланың солтүстік бөлігінде, Жұбановтар мемориалының жанында орналасқан."},
+ {c:"mon",code:"Е15",kk:"Сәңкібай батыр ескерткіші",ru:"Памятник Санкибай-батыру",lat:50.28376,lon:57.14738,
+  d:"Сәңкібай батыр — батыр XVIII века из Младшего жуза, участник войн с джунгарами. Памятник стоит в западной части города, у музея военной техники.",
+  dk:"Сәңкібай батыр — XVIII ғасырда өмір сүрген Кіші жүздің батыры, жоңғар соғыстарына қатысқан. Ескерткіш қаланың батыс бөлігінде, әскери техника мұражайының жанында тұр."},
+ {c:"mon",code:"Е17",kk:"Бөгенбай батыр ескерткіші",ru:"Памятник Богенбай-батыру",lat:50.25221,lon:57.21715,
+  d:"Бөгенбай батыр (1690–1778) — один из главных полководцев в борьбе с джунгарами, соратник Абылай-хана.",
+  dk:"Бөгенбай батыр (1690–1778) — жоңғарларға қарсы күрестің басты қолбасшыларының бірі, Абылай ханның серігі."},
+ {c:"mon",code:null,kk:"Есет Көтібарұлы ескерткіші",ru:"Памятник Есету Котибарулы",lat:50.29129,lon:57.23729,
+  d:"Есет Көтібарұлы (1807–1889) — батыр из рода Шекты. Он возглавил борьбу против Хивинского и Кокандского ханств и против колониальной политики царской России.",
+  dk:"Есет Көтібарұлы (1807–1889) — Шекті руынан шыққан батыр. Хиуа мен Қоқан хандықтарына және патшалық Ресейдің отарлық саясатына қарсы күресті басқарды."},
+ {c:"mon",code:null,kk:"Ер Едіге ескерткіші",ru:"Памятник Едиге",lat:50.29169,lon:57.1291,
+  d:"Едіге (1352–1419) — эмир Золотой Орды, основатель Ногайской Орды. Ему посвящён героический эпос «Ер Едіге».",
+  dk:"Едіге (1352–1419) — Алтын Орданың әмірі, Ноғай Ордасының негізін қалаушы. Оған «Ер Едіге» батырлық жыры арналған."},
+ {c:"mon",code:"Е1",kk:"Ахмет Жұбанов атындағы мемориалдық кешен",ru:"Мемориальный комплекс Ахмета Жубанова",lat:50.31318,lon:57.14687,
+  d:"Ахмет Жұбанов (1906–1968) — композитор, учёный и основатель оркестра народных инструментов имени Курмангазы, родом из Актюбинской области. Рядом стоит бюст его дочери, композитора Ғазизы Жұбановой.",
+  dk:"Ахмет Жұбанов (1906–1968) — Ақтөбе өңірінен шыққан композитор, ғалым, Құрманғазы атындағы халық аспаптар оркестрінің негізін қалаушы. Жанында қызы, композитор Ғазиза Жұбанованың бюсті тұр."},
+ {c:"mon",code:"Е11",kk:"Әлия Молдағұлова атындағы мемориалдық кешен",ru:"Мемориальный комплекс Алии Молдагуловой",lat:50.28769,lon:57.15238,
+  d:"Әлия Молдағұлова (1925–1944) — снайпер, Герой Советского Союза посмертно. Она родилась в Актюбинской области и погибла в бою под Новосокольниками в 1944 году.",
+  dk:"Әлия Молдағұлова (1925–1944) — мерген, Кеңес Одағының Батыры (қаза тапқаннан кейін берілген). Ақтөбе облысында туып, 1944 жылы Новосокольники маңындағы шайқаста қаза тапты."},
+ {c:"mon",code:"Е8",kk:"В. Пацаев ескерткіші",ru:"Памятник космонавту Виктору Пацаеву",lat:50.2933,lon:57.159,
+  d:"Виктор Пацаев (1933–1971) — космонавт, уроженец Актобе. Он работал на первой орбитальной станции «Салют-1» и погиб при возвращении корабля «Союз-11» на Землю.",
+  dk:"Виктор Пацаев (1933–1971) — Ақтөбеде туған ғарышкер. Алғашқы «Салют-1» орбиталық станциясында жұмыс істеп, «Союз-11» кемесі Жерге оралғанда қаза тапты."},
+ {c:"mon",code:null,kk:"Абай Құнанбайұлы ескерткіші",ru:"Памятник Абаю",lat:50.3019,lon:57.15959,
+  d:"Абай Құнанбайұлы (1845–1904) — поэт, философ и основатель казахской письменной литературы, автор «Қара сөздер».",
+  dk:"Абай Құнанбайұлы (1845–1904) — ақын, ойшыл, қазақ жазба әдебиетінің негізін салушы, «Қара сөздердің» авторы."},
+ {c:"mon",code:null,kk:"Нұрпейіс Байғанин ескерткіші",ru:"Памятник Нурпеису Байганину",lat:50.2955,lon:57.15645,
+  d:"Нұрпейіс Байғанин (1860–1945) — акын и жырау из Актюбинского края, исполнитель эпосов и народный поэт.",
+  dk:"Нұрпейіс Байғанин (1860–1945) — Ақтөбе өңірінің ақыны әрі жырауы, эпостарды орындаушы, халық ақыны."},
+ {c:"mon",code:null,kk:"Аққағаз Досжанова ескерткіші",ru:"Памятник Аккагаз Досжановой",lat:50.29601,lon:57.14915,
+  d:"Аққағаз Досжанова (1893–1932) — первая женщина-врач из казахов и общественный деятель.",
+  dk:"Аққағаз Досжанова (1893–1932) — тұңғыш қазақ әйел дәрігер, қоғам қайраткері."},
+ {c:"mon",code:null,kk:"Т. Ахтанов пен Қ. Шаңғытбаев ескерткіші",ru:"Памятник Т. Ахтанову и К. Шангытбаеву",lat:50.28513,lon:57.23078,
+  d:"Памятник писателю Тахауи Ахтанову и поэту Куандыку Шангытбаеву, уроженцам Актюбинской области. Стоит в старой части города.",
+  dk:"Ақтөбе облысында туған жазушы Тахауи Ахтанов пен ақын Қуандық Шаңғытбаевқа қойылған ескерткіш. Қаланың ескі бөлігінде орналасқан."},
+ {c:"mon",code:"Е9",kk:"«Домбыра» ескерткіші",ru:"Памятник «Домбыра»",lat:50.29037,lon:57.16122,
+  d:"Скульптура домбры — главного казахского народного инструмента. Это символ музыкальных традиций края, которые связаны в том числе с именами Жубановых.",
+  dk:"Қазақтың басты халық аспабы — домбыраның мүсіні. Ол өлкенің музыкалық дәстүрінің, соның ішінде Жұбановтар есімімен байланысты дәстүрдің символы."},
+ {c:"mon",code:"Е4",kk:"«Қан мен тер» ескерткіші",ru:"Памятник «Кровь и пот»",lat:50.30235,lon:57.16113,
+  d:"Монумент «Қан мен тер» отмечен на туристической карте города среди главных памятников. Название означает «Кровь и пот».",
+  dk:"«Қан мен тер» монументі қаланың туристік картасында басты ескерткіштердің қатарында белгіленген."},
+ {c:"mon",code:"Е12",kk:"«Зеңбірек» ескерткіш-белгісі",ru:"Памятный знак «Пушка»",lat:50.28404,lon:57.22043,
+  d:"Старое орудие в историческом центре города. Рядом на зданиях висят мемориальные доски о событиях 1919 года и первых учреждениях Актюбинска.",
+  dk:"Қаланың тарихи орталығындағы ескі зеңбірек. Маңындағы ғимараттарда 1919 жылғы оқиғалар мен Ақтөбенің алғашқы мекемелері туралы ескерткіш тақталар бар."},
+ {c:"mem",code:"Е7",kk:"«Даңқ» обелискі және Мәңгілік алау",ru:"Обелиск Славы и Вечный огонь",lat:50.29324,lon:57.17007,
+  d:"Мемориал павшим в Великой Отечественной войне. Здесь проходят памятные церемонии 9 Мая.",
+  dk:"Ұлы Отан соғысында қаза тапқандарға арналған мемориал. 9 мамырда мұнда еске алу рәсімдері өтеді."},
+ {c:"mem",code:null,kk:"Батырлар аллеясы",ru:"Аллея Героев",lat:50.28831,lon:57.15462,
+  d:"Аллея с бюстами и плитами Героев Советского Союза из Актюбинской области, среди них Әлия Молдағұлова и Виктор Пацаев.",
+  dk:"Ақтөбе облысынан шыққан Кеңес Одағы Батырларының бюстері мен тақталары қойылған аллея. Олардың арасында Әлия Молдағұлова мен Виктор Пацаев бар."},
+ {c:"mem",code:"Е16",kk:"«Азаттықтың ақ таңы» мемориалдық кешені",ru:"Мемориал «Белый рассвет свободы»",lat:50.2827,lon:57.13984,
+  d:"Мемориальный комплекс, посвящённый борьбе казахского народа за свободу и независимость. Стоит рядом с областным историко-краеведческим музеем.",
+  dk:"Қазақ халқының бостандық пен тәуелсіздік үшін күресіне арналған мемориалдық кешен. Облыстық тарихи-өлкетану мұражайының жанында тұр."},
+ {c:"mem",code:"Е14",kk:"«Қазақ халқына мың алғыс» стеласы",ru:"Стела «Тысяча благодарностей казахскому народу»",lat:50.28401,lon:57.18451,
+  d:"Стела благодарности казахам, которые приняли депортированные народы и эвакуированных в годы войны.",
+  dk:"Соғыс жылдары жер аударылған халықтар мен эвакуацияланғандарды қабылдаған қазақ халқына алғыс ретінде қойылған стела."},
+ {c:"mem",code:null,kk:"Аштық және саяси репрессия құрбандарына",ru:"Памятник жертвам голода и политических репрессий",lat:50.31365,lon:57.14883,
+  d:"Мемориал жертвам голода 1930-х годов и политических репрессий. 31 мая, в День памяти жертв, здесь проходят траурные мероприятия.",
+  dk:"1930-жылдардағы ашаршылық пен саяси қуғын-сүргін құрбандарына арналған мемориал. 31 мамырда, еске алу күнінде, мұнда аза тұту шаралары өтеді."},
+ {c:"mem",code:null,kk:"Жауынгер-интернационалистерге",ru:"Памятник воинам-интернационалистам",lat:50.30226,lon:57.15815,
+  d:"Памятная стела в честь жителей области, которые служили в Афганистане и других горячих точках.",
+  dk:"Ауғанстанда және басқа да ыстық нүктелерде қызмет еткен облыс тұрғындарының құрметіне қойылған ескерткіш стела."},
+ {c:"mem",code:null,kk:"Чернобыль апатын жоюшыларға",ru:"Памятник ликвидаторам аварии на ЧАЭС",lat:50.31878,lon:57.14701,
+  d:"Памятник жителям Актобе, которые участвовали в ликвидации последствий аварии на Чернобыльской АЭС в 1986 году.",
+  dk:"1986 жылы Чернобыль АЭС-індегі апаттың зардаптарын жоюға қатысқан ақтөбеліктерге қойылған ескерткіш."},
+ {c:"mem",code:null,kk:"Семей полигонынан зардап шеккендерге",ru:"Обелиск пострадавшим от Семипалатинского полигона",lat:50.3154,lon:57.13766,
+  d:"Обелиск ветеранам, которые пострадали от ядерных испытаний на Семипалатинском полигоне (1949–1989).",
+  dk:"Семей ядролық сынақ полигонындағы (1949–1989) сынақтардан зардап шеккен ардагерлерге арналған обелиск."},
+ {c:"rel",code:"Д3",kk:"«Нұр Ғасыр» мешіті",ru:"Мечеть «Нур Гасыр»",lat:50.28179,lon:57.1891,tour:"nurgasyr",
+  d:"Одна из крупнейших мечетей Казахстана, открыта в 2008 году. Её купол и минареты видны издалека. Для мечети есть 3D-тур снаружи и внутри.",
+  dk:"Қазақстандағы ең ірі мешіттердің бірі, 2008 жылы ашылды. Күмбезі мен мұнаралары алыстан көрінеді. Мешіттің сырты мен ішін 3D-тур арқылы көруге болады."},
+ {c:"rel",code:"Д2",kk:"Әулие Николай кафедралды соборы",ru:"Кафедральный собор Святителя Николая",lat:50.28701,lon:57.19229,tour:"sobor",
+  d:"Кафедральный собор Актюбинской епархии, один из самых высоких православных храмов Казахстана. Для собора есть 3D-тур.",
+  dk:"Ақтөбе епархиясының кафедралды соборы, Қазақстандағы ең биік православ храмдарының бірі. Собордың 3D-туры бар."},
+ {c:"rel",code:"Д1",kk:"«Нұрдәулет» мешіті",ru:"Мечеть «Нурдаулет»",lat:50.29611,lon:57.1556,
+  d:"Мечеть в центральной части города, рядом с памятником Нурпеису Байганину.",
+  dk:"Қаланың орталық бөлігіндегі мешіт, Нұрпейіс Байғанин ескерткішінің жанында."},
+ {c:"rel",code:"Д4",kk:"Орталық қала мешіті",ru:"Центральная городская мечеть",lat:50.28189,lon:57.23639,
+  d:"Центральная мечеть в старой части Актобе, недалеко от памятника Әйтеке би.",
+  dk:"Ақтөбенің ескі бөлігіндегі орталық мешіт, Әйтеке би ескерткішінен алыс емес."},
+ {c:"rel",code:null,kk:"Архангел Михаил ғибадатханасы",ru:"Храм Архангела Михаила",lat:50.28825,lon:57.2228,
+  d:"Православный храм в исторической части города, рядом с Набережной реки Елек.",
+  dk:"Қаланың тарихи бөлігіндегі православ храмы, Елек өзенінің жағалауына жақын."},
+ {c:"mus",code:"М13",kk:"Облыстық тарихи-өлкетану мұражайы",ru:"Областной историко-краеведческий музей",lat:50.27678,lon:57.13998,
+  d:"Главный музей истории края: археология, этнография, природа, история XX века. Рядом стоят мемориал «Азаттықтың ақ таңы» и скульптуры «Тайқазан».",
+  dk:"Өлке тарихының басты мұражайы: археология, этнография, табиғат, XX ғасыр тарихы. Жанында «Азаттықтың ақ таңы» мемориалы мен «Тайқазан» мүсіндері тұр."},
+ {c:"mus",code:"М6",kk:"Әлия Молдағұлова мемориалдық мұражайы",ru:"Мемориальный музей Алии Молдагуловой",lat:50.28862,lon:57.15808,
+  d:"Музей о жизни и подвиге снайпера Алии Молдагуловой: её личные вещи, письма и документы военных лет.",
+  dk:"Мерген Әлия Молдағұлованың өмірі мен ерлігіне арналған мұражай: оның жеке заттары, хаттары және соғыс жылдарының құжаттары."},
+ {c:"mus",code:"М10",kk:"«Руханият» облыстық мұражайы",ru:"Областной музей «Руханият»",lat:50.28183,lon:57.1889,
+  d:"Музей духовного наследия, расположен рядом с мечетью «Нұр Ғасыр».",
+  dk:"Рухани мұра мұражайы, «Нұр Ғасыр» мешітінің жанында орналасқан."},
+ {c:"mus",code:"М7",kk:"Облыстық өнер мұражайы",ru:"Областной музей искусств",lat:50.28759,lon:57.17125,
+  d:"Живопись, графика и декоративно-прикладное искусство художников Казахстана и Актюбинской области.",
+  dk:"Қазақстан және Ақтөбе облысы суретшілерінің кескіндеме, графика және сәндік-қолданбалы өнер туындылары."},
+ {c:"mus",code:null,kk:"Әскери техника мұражайы",ru:"Музей военной техники",lat:50.28431,lon:57.14825,
+  d:"Музей под открытым небом: самолёты и вертолёты разных лет, от Як-18 и МиГ-21 до Су-25, МиГ-29 и Ми-24.",
+  dk:"Ашық аспан астындағы мұражай: Як-18 бен МиГ-21-ден бастап Су-25, МиГ-29 және Ми-24-ке дейінгі түрлі жылдардың ұшақтары мен тікұшақтары."},
+ {c:"mus",code:null,kk:"Этноауыл",ru:"Этноаул",lat:50.29732,lon:57.1894,
+  d:"Этнографический комплекс с юртами, где показывают быт, ремёсла и традиции казахов.",
+  dk:"Киіз үйлері бар этнографиялық кешен. Мұнда қазақтардың тұрмысы, қолөнері мен салт-дәстүрі көрсетіледі."}
+];
+
+const I18N={
+ kk:{eyebrow:"Тарихи-мәдени мұра",sub:"Ақтөбенің ескерткіштері, мемориалдары, діни ғимараттары мен мұражайлары. Орын туралы оқу және 3D-турды ашу үшін картадағы нүктені басыңыз.",
+  ph:"Іздеу: Әйтеке би, Молдағұлова…",search:"Ескерткіштерден іздеу",empty:"Ештеңе табылмады. Басқа сөзді жазып көріңіз немесе барлық санаттарды қосыңыз.",
+  toursh:"3D-турлар · visitaktobe.kz",note:"3D-турлардың сілтемелері «Aqtöbe altyn besigim» туристік картасындағы QR-кодтардан алынды. Е1–Е17, Д1–Д4, М1–М14 — сол картадағы нөмірлер. Координаттар — OpenStreetMap.",
+  attrib:"Карта: © OpenStreetMap қатысушылары",all:"Барлық орындар",found:"Табылды",tour:"3D-тур",pano:"Панорама 360°",gis:"2ГИС",code:"Туристік картада:",close:"Жабу",
+  zin:"Жақындату",zout:"Алыстату",zreset:"Бүкіл қаланы көрсету",map:"Ақтөбе орталығының ескерткіштер картасы"},
+ ru:{eyebrow:"Историко-культурное наследие",sub:"Памятники, мемориалы, храмы и музеи Актобе. Нажмите на точку на карте, чтобы прочитать о месте и открыть 3D-тур.",
+  ph:"Поиск: Әйтеке би, Молдағұлова…",search:"Поиск по памятникам",empty:"Ничего не найдено. Попробуйте другое слово или включите все категории.",
+  toursh:"3D-туры · visitaktobe.kz",note:"Ссылки на 3D-туры взяты с QR-кодов туристической карты «Aqtöbe altyn besigim». Коды Е1–Е17, Д1–Д4, М1–М14 — номера с этой карты. Координаты — OpenStreetMap.",
+  attrib:"Карта: © участники OpenStreetMap",all:"Все места",found:"Найдено",tour:"3D-тур",pano:"Панорама 360°",gis:"2ГИС",code:"На туристической карте:",close:"Закрыть",
+  zin:"Приблизить",zout:"Отдалить",zreset:"Показать весь город",map:"Карта центра Актобе с памятниками"}
+};
+let L="kk";try{const s=localStorage.getItem("lang");if(s==="ru"||s==="kk")L=s}catch(e){}
+const T=k=>I18N[L][k];
+const NS="http://www.w3.org/2000/svg";
+const svg=document.getElementById("map"),world=document.getElementById("world"),mg=document.getElementById("markers"),wrap=document.getElementById("wrap");
+const active=new Set(Object.keys(CATS));
+let sel=-1,q="";
+P.forEach((p,i)=>{p.i=i;[p.x,p.y]=proj(p.lat,p.lon);p.num=i+1});
+
+// markers
+P.forEach(p=>{
+  const g=document.createElementNS(NS,"g");g.setAttribute("class","mk");g.setAttribute("tabindex","0");g.setAttribute("role","button");
+  g.setAttribute("aria-label",p.kk+" — "+p.ru);
+  g.innerHTML=`<circle class="ring" r="15"/><circle class="dot c-${p.c}" r="10"/><text>${p.num}</text>`;
+  g.addEventListener("click",e=>{e.stopPropagation();select(p.i,false)});
+  g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();select(p.i,false)}});
+  p.el=g;mg.appendChild(g);
+});
+
+// view transform
+let k=1,tx=0,ty=0;const KMIN=1,KMAX=12;
+function apply(){
+  world.setAttribute("transform",`translate(${tx} ${ty}) scale(${k})`);
+  const s=svgScale(); // screen px per svg unit at k=1
+  const m=1/(k*s)*0.9; // markers keep about the same screen size
+  P.forEach(p=>p.el.setAttribute("transform",`translate(${p.x} ${p.y}) scale(${m})`));
+  svg.classList.toggle("zoomed",k*s>1.6);
+}
+function svgScale(){const r=svg.getBoundingClientRect();return Math.min(r.width/W,r.height/H)||1}
+function clamp(){
+  const lim=0.15;
+  tx=Math.min(W*lim,Math.max(W-W*k-W*lim,tx));ty=Math.min(H*lim,Math.max(H-H*k-H*lim,ty));
+}
+function toSvg(cx,cy){const pt=svg.createSVGPoint();pt.x=cx;pt.y=cy;return pt.matrixTransform(svg.getScreenCTM().inverse())}
+function zoomAt(f,sx,sy){const nk=Math.min(KMAX,Math.max(KMIN,k*f));f=nk/k;tx=sx-(sx-tx)*f;ty=sy-(sy-ty)*f;k=nk;clamp();apply()}
+let anim;
+function flyTo(x,y,nk){
+  cancelAnimationFrame(anim);
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const k0=k,tx0=tx,ty0=ty,k1=nk;
+  const tx1=W/2-x*k1,ty1=H/2-y*k1;
+  const t0=performance.now(),D=reduce?0:450;
+  const step=t=>{let u=D?Math.min(1,(t-t0)/D):1;u=1-Math.pow(1-u,3);k=k0+(k1-k0)*u;tx=tx0+(tx1-tx0)*u;ty=ty0+(ty1-ty0)*u;apply();if(u<1)anim=requestAnimationFrame(step);else{clamp();apply()}};
+  anim=requestAnimationFrame(step);
+}
+svg.addEventListener("wheel",e=>{e.preventDefault();const p=toSvg(e.clientX,e.clientY);zoomAt(Math.exp(-e.deltaY*0.0015),p.x,p.y)},{passive:false});
+const ptrs=new Map();let last=null,moved=0;
+wrap.addEventListener("pointerdown",e=>{if(e.target.closest(".ctrl"))return;ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});moved=0;last=null;wrap.classList.add("drag")});
+wrap.addEventListener("pointermove",e=>{
+  if(!ptrs.has(e.pointerId))return;const prev=ptrs.get(e.pointerId);ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});
+  if(ptrs.size===1){const a=toSvg(prev.x,prev.y),b=toSvg(e.clientX,e.clientY);tx+=b.x-a.x;ty+=b.y-a.y;moved+=Math.abs(e.clientX-prev.x)+Math.abs(e.clientY-prev.y);if(moved>4&&!wrap.hasPointerCapture(e.pointerId))wrap.setPointerCapture(e.pointerId);clamp();apply()}
+  else if(ptrs.size===2){const [p1,p2]=[...ptrs.values()];const d=Math.hypot(p1.x-p2.x,p1.y-p2.y);const c=toSvg((p1.x+p2.x)/2,(p1.y+p2.y)/2);if(last)zoomAt(d/last,c.x,c.y);last=d;moved+=10}
+});
+const up=e=>{ptrs.delete(e.pointerId);if(ptrs.size<2)last=null;if(!ptrs.size)wrap.classList.remove("drag")};
+wrap.addEventListener("pointerup",up);wrap.addEventListener("pointercancel",up);
+// a drag should not count as a click on a marker
+wrap.addEventListener("click",e=>{if(moved>6){e.stopPropagation();e.preventDefault()}},true);
+document.getElementById("zin").onclick=()=>zoomAt(1.6,W/2*1,H/2*1);
+document.getElementById("zout").onclick=()=>zoomAt(1/1.6,W/2,H/2);
+document.getElementById("zreset").onclick=()=>flyTo(W/2,H/2,1);
+addEventListener("resize",apply);
+
+// filters, list
+const chips=document.getElementById("chips"),list=document.getElementById("list"),detail=document.getElementById("detail");
+Object.entries(CATS).forEach(([key,c])=>{
+  const b=document.createElement("button");b.className="chip";b.type="button";b.setAttribute("aria-pressed","true");
+  const cnt=P.filter(p=>p.c===key).length;
+  b.dataset.cat=key;b.dataset.cnt=cnt;
+  b.onclick=()=>{active.has(key)?active.delete(key):active.add(key);b.setAttribute("aria-pressed",active.has(key));render()};
+  chips.appendChild(b);
+});
+document.getElementById("q").addEventListener("input",e=>{q=e.target.value.trim().toLowerCase();render()});
+const visible=p=>active.has(p.c)&&(!q||(p.kk+" "+p.ru+" "+(p.code||"")).toLowerCase().includes(q));
+function chipText(){chips.querySelectorAll(".chip").forEach(b=>{const c=CATS[b.dataset.cat];b.innerHTML=`<i class="bg-${b.dataset.cat}"></i>${L==="kk"?c.n:c.ru} <span style="color:var(--muted)">${b.dataset.cnt}</span>`})}
+function render(){
+  list.innerHTML="";let n=0;
+  P.forEach(p=>{
+    const v=visible(p);p.el.classList.toggle("dim",!v);p.el.style.display=active.has(p.c)?"":"none";
+    if(!v)return;n++;
+    const li=document.createElement("li");
+    li.innerHTML=`<button type="button" class="${p.i===sel?"on":""}"><span class="n bg-${p.c}">${p.num}</span><span class="t"><b>${L==="kk"?p.kk:p.ru}</b><span>${L==="kk"?CATS[p.c].n:p.kk}</span></span>${p.tour?'<span class="has3d">3D</span>':""}</button>`;
+    li.firstChild.onclick=()=>select(p.i,true);
+    list.appendChild(li);
+  });
+  document.getElementById("empty").hidden=n>0;
+  document.getElementById("listh").textContent=`${n===P.length?T("all"):T("found")} · ${n}`;
+}
+const ICON={
+  tour:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>',
+  pano:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="12" rx="9" ry="4"/><circle cx="12" cy="12" r="1.5"/></svg>',
+  pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>'
+};
+function select(i,fly){
+  sel=i;const p=P[i];
+  P.forEach(o=>o.el.classList.toggle("on",o.i===i));
+  mg.appendChild(p.el);
+  const t=p.tour&&TOURS[p.tour];
+  detail.innerHTML=`<div class="d-top"><div class="d-cat t-${p.c}">${p.num} · ${L==="kk"?CATS[p.c].n:CATS[p.c].ru}</div><button class="x" type="button" aria-label="${T("close")}">×</button></div>
+   <h2 class="d-name">${L==="kk"?p.kk:p.ru}</h2><p class="d-ru">${L==="kk"?p.ru:p.kk}</p>
+   <p class="d-text">${L==="kk"?p.dk:p.d}</p>
+   <div class="links">
+    ${t?`<a class="btn tour" href="${t.u}" target="_blank" rel="noopener">${ICON.tour}${T("tour")}: ${L==="kk"?t.t:t.tr}</a>`:""}
+    <a class="btn" href="https://yandex.kz/maps/?ll=${p.lon},${p.lat}&z=18&l=stv,sta&panorama%5Bpoint%5D=${p.lon},${p.lat}" target="_blank" rel="noopener">${ICON.pano}${T("pano")}</a>
+    <a class="btn" href="https://2gis.kz/aktobe/geo/${p.lon},${p.lat}" target="_blank" rel="noopener">${ICON.pin}${T("gis")}</a>
+   </div>
+   ${p.code?`<p class="d-code" style="margin:12px 0 0">${T("code")} ${p.code}</p>`:""}`;
+  detail.hidden=false;
+  detail.querySelector(".x").onclick=()=>{detail.hidden=true;sel=-1;P.forEach(o=>o.el.classList.remove("on"));render()};
+  document.getElementById("scroll").scrollTop=0;
+  if(fly)flyTo(p.x,p.y,Math.max(k,4));
+  render();
+}
+// tours
+const tours=document.getElementById("tours");
+function renderTours(){tours.innerHTML="";Object.values(TOURS).forEach(t=>{const a=document.createElement("a");a.className="tcard";a.href=t.u;a.target="_blank";a.rel="noopener";a.innerHTML=`<em>3D · 360°</em><b>${L==="kk"?t.t:t.tr}</b><span>${L==="kk"?t.sk:t.s}</span>`;tours.appendChild(a)})}
+function setLang(l){
+  L=l;try{localStorage.setItem("lang",l)}catch(e){}
+  document.documentElement.lang=l;
+  document.querySelectorAll("[data-i]").forEach(el=>el.textContent=T(el.dataset.i));
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===l));
+  const qi=document.getElementById("q");qi.placeholder=T("ph");qi.setAttribute("aria-label",T("search"));
+  ["zin","zout","zreset"].forEach(id=>document.getElementById(id).setAttribute("aria-label",T(id)));
+  svg.setAttribute("aria-label",T("map"));
+  P.forEach(p=>p.el.setAttribute("aria-label",L==="kk"?p.kk:p.ru));
+  chipText();renderTours();
+  if(sel>=0)select(sel,false);else render();
+}
+document.querySelectorAll(".lang button").forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
+
+// start: city centre, slightly zoomed
+k=1.25;tx=W/2-W/2*k;ty=H/2-H*0.46*k;clamp();
+apply();setLang(L);
+requestAnimationFrame(apply);
+</script>

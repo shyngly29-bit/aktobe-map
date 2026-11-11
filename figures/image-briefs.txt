@@ -1,0 +1,52 @@
+Generated artistic reconstructions. Full-body figures with transparent alpha, rendered as realistic oil illustrations. Background plates are empty, with subtle Kazakh ornament at the corners.
+
+abilkaiyr.png — Әбілқайыр хан, Kazakh khan, burgundy gold-embroidered shapan and tall fur hat with owl feather
+abilkaiyr_bg.png — 18th-century western Kazakh steppe with distant yurts
+
+zhalantos.png — Жалаңтөс баһадүр, Central Asian commander, helmet and armor over robe, sheathed saber
+zhalantos_bg.png — Samarkand Registan inspired Timurid and early modern tilework architecture
+
+aiteke.png — Әйтеке би, Kazakh bi and elder with grey beard, shapan, börik and staff
+aiteke_bg.png — open Kazakh steppe, distant yurt and dawn
+
+monke.png — Мөңке би, Kazakh bi and oral poet, elderly with grey beard, shapan, börik and dombra
+monke_bg.png — rolling Aktobe steppe and a distant river
+
+tileu.png — Тілеу батыр, Kazakh batyr, chain mail and helmet, sheathed saber
+tileu_bg.png — dry grassland, distant low hills and a pale dawn
+
+sankibai.png — Сәңкібай батыр, Kazakh batyr, chain mail and helmet with round shield and sheathed saber
+sankibai_bg.png — western Kazakh steppe ridge, distant storm clouds
+
+bogenbai.png — Бөгенбай батыр, Kazakh commander, helmet, armor and sheathed saber
+bogenbai_bg.png — wide central Kazakh steppe and low mountains
+
+eset.png — Есет Көтібарұлы, 19th century Kazakh batyr, tall hat and long coat, riding whip at rest
+eset_bg.png — 19th-century western Kazakh steppe encampment, distant empty yurts
+
+edige.png — Ер Едіге, late medieval Golden Horde emir, period-inspired armor, helmet and sheathed sword
+edige_bg.png — medieval Eurasian steppe, distant encampment and river bend
+
+zhubanov.png — Ахмет Жұбанов, Kazakh composer, mid-twentieth-century suit, holding a dombra
+zhubanov_bg.png — empty mid-century Kazakh music hall, warm wood and soft daylight
+
+aliya.png — Әлия Молдағұлова, young adult Kazakh woman in WWII Soviet field tunic, side cap with small red star and boots, period sniper rifle slung, relaxed pose
+aliya_bg.png — quiet birch woodland edge, early winter, muted daylight
+
+patsaev.png — Виктор Пацаев, Soviet cosmonaut, early 1970s flight suit, carrying helmet, unobstructed face
+patsaev_bg.png — early space-age launch complex inspired by Baikonur, clear pale sky
+
+abai.png — Абай Құнанбайұлы, Kazakh poet with short beard, dark shapan and skullcap, holding book
+abai_bg.png — Shyngystau-inspired hills and an empty steppe study nook
+
+baiganin.png — Нұрпейіс Байғанин, elderly Kazakh oral poet, grey beard, shapan and börik, holding dombra
+baiganin_bg.png — western Kazakh steppe, softly lit empty yurt exterior
+
+doszhanova.png — Аққағаз Досжанова, Kazakh female physician, modest 1920s dark dress with white collar, carrying medical bag
+doszhanova_bg.png — empty 1920s Central Asian clinic interior with daylight
+
+akhtanov.png — Тахауи Ахтанов, Kazakh writer, mid-20th-century suit, closed manuscript
+akhtanov_bg.png — empty mid-20th-century writer's study with desk and books
+
+shangytbaev.png — Қуандық Шаңғытбаев, Kazakh poet, mid-century dark suit and closed poetry book
+shangytbaev_bg.png — empty mid-twentieth-century literary reading room with books and soft daylight

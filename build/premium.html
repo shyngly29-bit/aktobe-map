@@ -1,0 +1,531 @@
+<title>Ақтөбе ескерткіштері</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: museum atlas. Catalogue column on the left, the city map fills the rest; the object card floats over the map (bottom sheet on phones). */
+:root{
+  --paper:#F4EFE5; --paper-2:#EDE6D8; --sheet:#FBF8F2; --ink:#242823; --ink-2:#5C5F57; --rule:#DDD4C3;
+  --water:#9FBBC8; --water-line:#8FAEBD; --park:#DCE1C8; --road:#DDD2BE; --road-major:#D3C5AB; --road-minor:#E6DDCD; --rail:#A59C8C;
+  --bronze:#9B6A32; --bronze-soft:rgba(155,106,50,.14); --on-bronze:#FFFFFF;
+  --c-mon:#8C4A2B; --c-mem:#3F5763; --c-rel:#5D4A7C; --c-mus:#2E6863;
+  --shadow:0 10px 30px rgba(36,40,35,.16),0 1px 3px rgba(36,40,35,.12);
+  --f-display:"PT Serif",Georgia,"Times New Roman",serif;
+  --f-ui:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#1A1B18; --paper-2:#22231F; --sheet:#24251F; --ink:#ECE6DA; --ink-2:#A9A497; --rule:#3A3A33;
+  --water:#2E4C59; --water-line:#3A5A68; --park:#242B20; --road:#3B3C34; --road-major:#4A4A40; --road-minor:#2C2D27; --rail:#5D5A50;
+  --bronze:#CF9A5C; --bronze-soft:rgba(207,154,92,.18); --on-bronze:#1A1B18;
+  --c-mon:#D98B63; --c-mem:#8FB0BF; --c-rel:#B7A2DA; --c-mus:#7CC2B9;
+  --shadow:0 10px 30px rgba(0,0,0,.5),0 1px 3px rgba(0,0,0,.4); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#1A1B18; --paper-2:#22231F; --sheet:#24251F; --ink:#ECE6DA; --ink-2:#A9A497; --rule:#3A3A33;
+  --water:#2E4C59; --water-line:#3A5A68; --park:#242B20; --road:#3B3C34; --road-major:#4A4A40; --road-minor:#2C2D27; --rail:#5D5A50;
+  --bronze:#CF9A5C; --bronze-soft:rgba(207,154,92,.18); --on-bronze:#1A1B18;
+  --c-mon:#D98B63; --c-mem:#8FB0BF; --c-rel:#B7A2DA; --c-mus:#7CC2B9;
+  --shadow:0 10px 30px rgba(0,0,0,.5),0 1px 3px rgba(0,0,0,.4); color-scheme:dark}
+html,body{height:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-ui);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--bronze);outline-offset:2px}
+
+.app{display:grid;grid-template-columns:360px minmax(0,1fr);height:100%}
+
+/* ---------- catalogue ---------- */
+.side{display:flex;flex-direction:column;min-height:0;min-width:0;background:var(--paper);border-right:1px solid var(--rule)}
+.head{padding:26px 24px 18px}
+.toprow{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);font-weight:600}
+h1{font-family:var(--f-display);font-weight:700;font-size:34px;line-height:1.05;letter-spacing:-.01em;margin:14px 0 10px;text-wrap:balance}
+h1 em{font-style:italic;font-weight:400;color:var(--bronze)}
+.sub{color:var(--ink-2);font-size:14px;margin:0;max-width:34ch}
+.lang{display:inline-flex;border:1px solid var(--rule);border-radius:999px;padding:2px;flex:none}
+.lang button{border:none;background:transparent;color:var(--ink-2);font-size:12px;font-weight:600;letter-spacing:.06em;padding:6px 11px;border-radius:999px;cursor:pointer;min-height:32px}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.tools{display:flex;flex-direction:column;gap:12px;padding:0 24px 16px}
+.search{width:100%;padding:11px 14px;border:1px solid var(--rule);border-radius:12px;background:var(--sheet);color:var(--ink);font:inherit;font-size:14.5px;min-height:44px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;border:1px solid var(--rule);background:var(--sheet);font-size:13px;cursor:pointer;min-height:36px}
+.chip i{width:9px;height:9px;border-radius:50%}
+.chip small{color:var(--ink-2);font-size:12px;font-variant-numeric:tabular-nums}
+.chip[aria-pressed="false"]{background:transparent;color:var(--ink-2)}
+.chip[aria-pressed="false"] i{background:transparent!important;box-shadow:inset 0 0 0 1.5px var(--ink-2)}
+.scroll{overflow:auto;flex:1;min-height:0;border-top:1px solid var(--rule)}
+
+.route{margin:18px 16px 4px;padding:18px 18px 16px;border-radius:var(--r);background:var(--sheet);border:1px solid var(--rule)}
+.route h2{font-family:var(--f-display);font-weight:700;font-size:19px;line-height:1.2;margin:2px 0 4px}
+.route p{margin:0 0 12px;color:var(--ink-2);font-size:13.5px}
+.stops{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.stops li{position:relative}
+.stops li:not(:last-child)::after{content:"";position:absolute;left:15px;top:34px;bottom:-4px;width:1px;background:var(--rule)}
+.stops button{display:flex;gap:12px;align-items:center;width:100%;text-align:left;border:none;background:transparent;padding:5px 6px 5px 0;border-radius:10px;cursor:pointer;min-height:40px}
+.stops b{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--bronze);color:var(--bronze);font-size:12.5px;font-weight:600;background:var(--sheet);position:relative;z-index:1;font-variant-numeric:tabular-nums}
+.stops span{font-size:14px;line-height:1.3}
+.stops span small{display:block;color:var(--ink-2);font-size:12px}
+.stops button.on b{background:var(--bronze);color:var(--on-bronze)}
+.stops button:hover span{color:var(--bronze)}
+
+.sec-h{display:flex;justify-content:space-between;align-items:baseline;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--ink-2);padding:22px 24px 8px;margin:0}
+.list{list-style:none;margin:0;padding:0 12px 8px}
+.row{width:100%;display:grid;grid-template-columns:12px minmax(0,1fr) auto;gap:14px;align-items:center;text-align:left;padding:11px 12px;border:none;border-radius:12px;background:transparent;cursor:pointer;min-height:52px}
+.row:hover,.row.hl{background:var(--paper-2)}
+.row.on{background:var(--bronze-soft)}
+.row .dot{width:10px;height:10px;border-radius:50%}
+.row .t{min-width:0}
+.row .t b{display:block;font-weight:500;font-size:14.5px;line-height:1.3}
+.row .t span{display:block;color:var(--ink-2);font-size:12.5px;line-height:1.35;margin-top:2px}
+.b3d{font-size:10.5px;font-weight:600;letter-spacing:.08em;color:var(--bronze);border:1px solid currentColor;border-radius:6px;padding:1px 6px}
+.empty{padding:6px 24px 16px;color:var(--ink-2)}
+.tours{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:4px 16px 8px}
+.tcard{display:flex;flex-direction:column;gap:2px;padding:13px 14px;border-radius:12px;border:1px solid var(--rule);background:var(--sheet);color:var(--ink);text-decoration:none;min-width:0;min-height:44px}
+.tcard:hover{border-color:var(--bronze)}
+.tcard em{font-style:normal;font-size:10.5px;font-weight:600;letter-spacing:.1em;color:var(--bronze)}
+.tcard b{font-weight:500;font-size:13.5px;line-height:1.3}
+.tcard span{font-size:12px;color:var(--ink-2)}
+.note{padding:14px 24px 28px;color:var(--ink-2);font-size:12px;margin:0}
+
+/* ---------- map ---------- */
+.mapwrap{position:relative;overflow:hidden;background:var(--paper);touch-action:none;cursor:grab;min-width:0;min-height:0}
+.mapwrap.drag{cursor:grabbing}
+svg#map{position:absolute;inset:0;width:100%;height:100%;display:block;user-select:none;-webkit-user-select:none}
+.m-water{fill:var(--water)}
+.m-park{fill:var(--park)}
+.m-river{fill:none;stroke:var(--water);stroke-width:5px;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round}
+.m-stream{fill:none;stroke:var(--water);stroke-width:2.2px;vector-effect:non-scaling-stroke}
+.m-rail{fill:none;stroke:var(--rail);stroke-width:2.4px;vector-effect:non-scaling-stroke}
+.m-rail2{fill:none;stroke:var(--paper);stroke-width:1.1px;stroke-dasharray:5 5;vector-effect:non-scaling-stroke}
+.m-res{fill:none;stroke:var(--road-minor);stroke-width:1.1px;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.m-ter{fill:none;stroke:var(--road);stroke-width:2.2px;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.m-sec{fill:none;stroke:var(--road);stroke-width:3.2px;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.m-pri{fill:none;stroke:var(--road-major);stroke-width:5px;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.m-lbls{display:none}
+.z2 .m-lbls{display:inline}
+.m-lbl{font-family:var(--f-ui);font-size:5.5px;fill:var(--ink-2);opacity:.75;paint-order:stroke;stroke:var(--paper);stroke-width:1.6px;letter-spacing:.03em}
+.ol{fill:var(--bronze-soft);stroke:var(--bronze);stroke-width:1.6px;vector-effect:non-scaling-stroke;stroke-linejoin:round;pointer-events:none;display:none}
+.ol.show{display:inline}
+.ol.hov{fill:none;stroke-dasharray:4 3}
+
+.mk{cursor:pointer;outline:none}
+.mk .hit{fill:transparent}
+.mk .dot{stroke:var(--paper);stroke-width:2}
+.mk .ring{fill:none;stroke:var(--bronze);stroke-width:1.5;opacity:0}
+.mk.hl .ring,.mk.on .ring{opacity:1}
+.mk.on .dot{stroke:var(--bronze);stroke-width:2.5}
+.mk text{font-family:var(--f-ui);font-size:11.5px;font-weight:500;fill:var(--ink);paint-order:stroke;stroke:var(--paper);stroke-width:3.5px;stroke-linejoin:round;pointer-events:none;display:none}
+.mk text.show{display:inline}
+.mk.on text,.mk.hl text{fill:var(--bronze);font-weight:600}
+.c-mon{fill:var(--c-mon)}.c-mem{fill:var(--c-mem)}.c-rel{fill:var(--c-rel)}.c-mus{fill:var(--c-mus)}
+.bg-mon{background:var(--c-mon)}.bg-mem{background:var(--c-mem)}.bg-rel{background:var(--c-rel)}.bg-mus{background:var(--c-mus)}
+.t-mon{color:var(--c-mon)}.t-mem{color:var(--c-mem)}.t-rel{color:var(--c-rel)}.t-mus{color:var(--c-mus)}
+.mapwrap.focusing .mk:not(.hl):not(.on){opacity:.35}
+.mk.gone{display:none}
+@media (prefers-reduced-motion:no-preference){.mk{transition:opacity .18s}}
+
+.ctrl{position:absolute;left:calc(14px + env(safe-area-inset-left,0px));bottom:calc(30px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;border-radius:12px;background:var(--sheet);border:1px solid var(--rule);box-shadow:var(--shadow);overflow:hidden}
+.ctrl button{width:44px;height:44px;border:none;background:transparent;font-size:20px;line-height:1;cursor:pointer}
+.ctrl button+button{border-top:1px solid var(--rule)}
+.ctrl button:hover{color:var(--bronze)}
+.attrib{position:absolute;left:calc(14px + env(safe-area-inset-left,0px));bottom:calc(8px + env(safe-area-inset-bottom,0px));font-size:11px;color:var(--ink-2)}
+.north{position:absolute;left:calc(18px + env(safe-area-inset-left,0px));top:calc(16px + env(safe-area-inset-top,0px));font-family:var(--f-display);font-size:13px;color:var(--ink-2);display:flex;flex-direction:column;align-items:center;pointer-events:none}
+.north i{display:block;width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:16px solid var(--ink-2);margin-top:2px}
+
+/* hover preview */
+.pv{position:absolute;left:0;top:0;width:236px;background:var(--sheet);border:1px solid var(--rule);border-radius:12px;box-shadow:var(--shadow);overflow:hidden;pointer-events:none;z-index:5}
+.pv[hidden]{display:none}
+.pv .img{display:block;width:100%;object-fit:cover;background:var(--paper-2)}
+.pv .img.por{height:150px;object-position:50% 22%}
+.pv .img.ph{height:132px}
+.pv .tx{padding:10px 13px 12px}
+.pv .cat{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.pv b{display:block;font-family:var(--f-display);font-weight:700;font-size:16px;line-height:1.2;margin:3px 0 2px}
+.pv span{display:block;font-size:12.5px;color:var(--ink-2);line-height:1.35}
+
+/* object card */
+.card{position:absolute;right:calc(16px + env(safe-area-inset-right,0px));top:calc(16px + env(safe-area-inset-top,0px));width:min(392px,calc(100% - 96px));max-height:calc(100% - 32px);overflow:auto;background:var(--sheet);border:1px solid var(--rule);border-radius:18px;box-shadow:var(--shadow);z-index:6;overscroll-behavior:contain}
+.card[hidden]{display:none}
+.c-photo{position:relative;margin:0}
+.c-photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--paper-2);max-width:100%}
+.credit{font-size:11px;color:var(--ink-2);padding:6px 22px 0;margin:0;line-height:1.4}
+.credit a{color:inherit}
+.c-in{padding:20px 22px 22px;display:flex;flex-direction:column;gap:16px}
+.c-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.c-cat{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.c-name{font-family:var(--f-display);font-weight:700;font-size:26px;line-height:1.12;margin:6px 0 4px;text-wrap:balance}
+.c-alt{margin:0;color:var(--ink-2);font-size:14px}
+.x{flex:none;width:40px;height:40px;border-radius:50%;border:1px solid var(--rule);background:var(--sheet);font-size:22px;line-height:1;cursor:pointer;color:var(--ink-2)}
+.x:hover{color:var(--ink)}
+.person{display:grid;grid-template-columns:76px minmax(0,1fr);gap:14px;align-items:center;padding:12px;border-radius:12px;background:var(--paper)}
+.person img{width:76px;height:95px;object-fit:cover;object-position:50% 20%;border-radius:8px;display:block}
+.person b{display:block;font-family:var(--f-display);font-size:16px;line-height:1.25}
+.person span{display:block;color:var(--ink-2);font-size:12.5px;line-height:1.4}
+.person small{display:block;color:var(--ink-2);font-size:11px;margin-top:6px;line-height:1.35}
+.person small a{color:inherit}
+.primary{display:flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:12px 18px;border-radius:12px;background:var(--bronze);color:var(--on-bronze);text-decoration:none;font-weight:600;font-size:15px}
+.primary:hover{filter:brightness(1.07)}
+.primary svg,.sec svg{width:19px;height:19px;flex:none}
+.secs{display:flex;flex-wrap:wrap;gap:8px}
+.sec{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:9px 14px;border-radius:12px;border:1px solid var(--rule);color:var(--ink);text-decoration:none;font-size:14px;font-weight:500}
+.sec:hover{border-color:var(--bronze);color:var(--bronze)}
+.c-text{margin:0;font-size:15px;line-height:1.65;max-width:62ch}
+.meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--ink-2);border-top:1px solid var(--rule);padding-top:12px}
+.meta a{color:inherit}
+.rnav{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px;border-radius:12px;background:var(--bronze-soft)}
+.rnav span{font-size:12.5px;font-weight:600;color:var(--bronze)}
+.rnav div{display:flex;gap:6px}
+.rnav button{min-height:40px;min-width:44px;padding:6px 12px;border-radius:10px;border:1px solid var(--bronze);background:transparent;color:var(--bronze);font-weight:600;cursor:pointer}
+.rnav button:disabled{opacity:.35;cursor:default}
+.grip{display:none}
+.more{display:none}
+
+/* ---------- tablet ---------- */
+@media (max-width:1180px){
+  .app{grid-template-columns:320px minmax(0,1fr)}
+  h1{font-size:29px}
+}
+/* ---------- phone ---------- */
+@media (max-width:900px){
+  .app{grid-template-columns:minmax(0,1fr);grid-template-rows:58% minmax(0,1fr)}
+  .side{order:2;border-right:none;border-top:1px solid var(--rule)}
+  .mapwrap{order:1}
+  .head{padding:16px max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px))}
+  h1{font-size:25px;margin:8px 0 4px}
+  .sub{display:none}
+  .tools{padding:0 max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px))}
+  .sec-h,.note,.empty{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  .list{padding-left:max(4px,env(safe-area-inset-left,0px));padding-right:max(4px,env(safe-area-inset-right,0px))}
+  .route{margin-left:max(12px,env(safe-area-inset-left,0px));margin-right:max(12px,env(safe-area-inset-right,0px))}
+  .tours{padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px))}
+  .ctrl{left:auto;right:calc(12px + env(safe-area-inset-right,0px));bottom:auto;top:calc(12px + env(safe-area-inset-top,0px))}
+  .pv{display:none!important}
+  .card{position:fixed;left:0;right:0;top:auto;bottom:0;width:auto;max-height:calc(100% - 190px);border-radius:20px 20px 0 0;border-bottom:none;padding-bottom:env(safe-area-inset-bottom,0px)}
+  .card .c-in{padding:8px max(18px,env(safe-area-inset-right,0px)) 18px max(18px,env(safe-area-inset-left,0px));gap:14px}
+  .grip{display:block;width:100%;height:28px;border:none;background:transparent;cursor:pointer;position:relative}
+  .grip::before{content:"";position:absolute;left:50%;top:10px;width:40px;height:5px;border-radius:3px;background:var(--rule);transform:translateX(-50%)}
+  .card[data-state="peek"] .c-photo,.card[data-state="peek"] .credit,.card[data-state="peek"] .person,.card[data-state="peek"] .c-text,.card[data-state="peek"] .secs,.card[data-state="peek"] .meta,.card[data-state="peek"] .rnav{display:none}
+  .card[data-state="peek"] .c-head{display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px;align-items:center}
+  .card[data-state="peek"] .thumb{display:block}
+  .card[data-state="peek"] .c-name{font-size:20px;margin:2px 0}
+  .card[data-state="peek"] .c-alt{font-size:13px}
+  .more{display:block;min-height:44px;border:none;background:transparent;color:var(--bronze);font-weight:600;cursor:pointer;padding:4px 0;text-align:center}
+  .c-name{font-size:23px}
+}
+@media (min-width:601px) and (max-width:900px){.card{left:0;right:0;margin:0 auto;width:min(560px,100%);border:1px solid var(--rule);border-bottom:none}}
+.thumb{display:none;width:64px;height:64px;border-radius:12px;object-fit:cover;object-position:50% 25%;background:var(--paper-2)}
+.c-head{display:block}
+@media (prefers-reduced-motion:no-preference){.card{animation:rise .22s ease-out}@keyframes rise{from{transform:translateY(10px)}to{transform:none}}}
+</style>
+
+<div class="app">
+  <aside class="side" aria-label="Каталог">
+    <div class="head">
+      <div class="toprow">
+        <div class="eyebrow" data-i="eyebrow"></div>
+        <div class="lang" role="group" aria-label="Тіл / Язык"><button type="button" data-lang="kk" aria-pressed="true">ҚАЗ</button><button type="button" data-lang="ru" aria-pressed="false">РУС</button></div>
+      </div>
+      <h1 id="h1"></h1>
+      <p class="sub" data-i="sub"></p>
+    </div>
+    <div class="tools">
+      <input class="search" id="q" type="search" autocomplete="off">
+      <div class="chips" id="chips"></div>
+    </div>
+    <div class="scroll" id="scroll">
+      <section class="route" aria-labelledby="rt-h">
+        <div class="eyebrow" data-i="rEyebrow"></div>
+        <h2 id="rt-h" data-i="rTitle"></h2>
+        <p data-i="rText"></p>
+        <ol class="stops" id="stops"></ol>
+      </section>
+      <h2 class="sec-h"><span id="listh"></span></h2>
+      <ul class="list" id="list"></ul>
+      <p class="empty" id="empty" hidden data-i="empty"></p>
+      <h2 class="sec-h"><span data-i="toursh"></span></h2>
+      <div class="tours" id="tours"></div>
+      <p class="note" data-i="note"></p>
+    </div>
+  </aside>
+
+  <div class="mapwrap" id="wrap">
+    <svg id="map" viewBox="0 0 __W__ __H__" preserveAspectRatio="xMidYMid meet" role="img">
+      <g id="world">__SVG__
+        <path id="olHov" class="ol hov"/>
+        <path id="olSel" class="ol"/>
+        <g id="markers"></g>
+      </g>
+    </svg>
+    <div class="north" aria-hidden="true">С<i></i></div>
+    <div class="ctrl">
+      <button id="zin" type="button">+</button>
+      <button id="zout" type="button">−</button>
+      <button id="zreset" type="button" style="font-size:16px">⤢</button>
+    </div>
+    <div class="attrib" data-i="attrib"></div>
+    <div class="pv" id="pv" hidden aria-hidden="true"></div>
+    <section class="card" id="card" hidden aria-live="polite"></section>
+  </div>
+</div>
+
+<script>
+const LON0=__LON0__,LAT1=__LAT1__,KX=__KX__,KY=__KY__,W=__W__,H=__H__;
+const proj=(lat,lon)=>[(lon-LON0)*KX,(LAT1-lat)*KY];
+const CATS={mon:{n:"Ескерткіштер",ru:"Памятники"},mem:{n:"Мемориалдар",ru:"Мемориалы"},rel:{n:"Діни ғимараттар",ru:"Храмы и мечети"},mus:{n:"Мұражайлар",ru:"Музеи"}};
+const CAT1={mon:["Ескерткіш","Памятник"],mem:["Мемориал","Мемориал"],rel:["Діни ғимарат","Храм / мечеть"],mus:["Мұражай","Музей"]};
+__TOURS__
+__PDATA__
+const EXTRA=__EXTRA__;
+const ROUTE=["Ахмет Жұбанов атындағы мемориалдық кешен","Әбілқайыр хан ескерткіші","Абай Құнанбайұлы ескерткіші","В. Пацаев ескерткіші","Әлия Молдағұлова атындағы мемориалдық кешен","Жалаңтөс баһадүр ескерткіші","Әйтеке би ескерткіші","Есет Көтібарұлы ескерткіші"];
+
+const I18N={
+ kk:{eyebrow:"Тарихи-мәдени мұра атласы",h1:"Ақтөбе <em>ескерткіштері</em>",sub:"Ескерткіштер, мемориалдар, ғибадатханалар мен мұражайлар. Нүктені басып, тарихын оқыңыз және 3D-турды ашыңыз.",
+  ph:"Іздеу: Әйтеке би, Молдагулова, собор…",search:"Атауы бойынша іздеу",empty:"Ештеңе табылмады. Басқа сөзді жазып көріңіз немесе барлық санаттарды қосыңыз.",
+  toursh:"3D-турлар · visitaktobe.kz",note:"3D-турлардың сілтемелері «Aqtöbe altyn besigim» туристік картасындағы QR-кодтардан алынды. Координаттар мен контурлар — OpenStreetMap, суреттер — Wikimedia Commons (еркін лицензиялар).",
+  attrib:"Карта: © OpenStreetMap қатысушылары",all:"Каталог",found:"Табылды",tour:"3D турды ашу",pano:"Панорама 360°",gis:"2ГИС-те ашу",code:"Туристік картадағы нөмірі",close:"Жабу",
+  zin:"Жақындату",zout:"Алыстату",zreset:"Бүкіл қаланы көрсету",map:"Ақтөбе орталығының ескерткіштер картасы",more:"Толығырақ",less:"Жинау",
+  rEyebrow:"Тақырыптық маршрут",rTitle:"Ақтөбенің тарихи тұлғалары",rText:"Хандар мен билерден ақындар мен ғарышкерге дейін — сегіз аялдама.",
+  stop:"Аялдама",prev:"Алдыңғы",next:"Келесі",photo:"Сурет",portrait:"Портрет",outline:"Контур: OpenStreetMap",place:"Орын: OpenStreetMap",lic:"Лицензия"},
+ ru:{eyebrow:"Атлас историко-культурного наследия",h1:"Памятники <em>Актобе</em>",sub:"Памятники, мемориалы, храмы и музеи. Нажмите на точку, чтобы прочитать историю и открыть 3D-тур.",
+  ph:"Поиск: Әйтеке би, Молдагулова, собор…",search:"Поиск по названию",empty:"Ничего не найдено. Попробуйте другое слово или включите все категории.",
+  toursh:"3D-туры · visitaktobe.kz",note:"Ссылки на 3D-туры взяты с QR-кодов туристической карты «Aqtöbe altyn besigim». Координаты и контуры — OpenStreetMap, изображения — Wikimedia Commons (свободные лицензии).",
+  attrib:"Карта: © участники OpenStreetMap",all:"Каталог",found:"Найдено",tour:"Открыть 3D-тур",pano:"Панорама 360°",gis:"Открыть в 2ГИС",code:"Номер на туристической карте",close:"Закрыть",
+  zin:"Приблизить",zout:"Отдалить",zreset:"Показать весь город",map:"Карта центра Актобе с памятниками",more:"Подробнее",less:"Свернуть",
+  rEyebrow:"Тематический маршрут",rTitle:"Исторические личности Актобе",rText:"От ханов и биев до поэтов и космонавта — восемь остановок.",
+  stop:"Остановка",prev:"Назад",next:"Далее",photo:"Фото",portrait:"Портрет",outline:"Контур: OpenStreetMap",place:"Место: OpenStreetMap",lic:"Лицензия"}
+};
+let L="kk";try{const s=localStorage.getItem("lang");if(s==="ru"||s==="kk")L=s}catch(e){}
+const T=k=>I18N[L][k], li=()=>L==="kk"?0:1;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fold=s=>s.toLowerCase().replace(/[«»"]/g,"").replace(/ә/g,"а").replace(/ғ/g,"г").replace(/қ/g,"к").replace(/ң/g,"н").replace(/ө/g,"о").replace(/[ұү]/g,"у").replace(/һ/g,"х").replace(/і/g,"и").replace(/ё/g,"е");
+
+P.forEach((p,i)=>{p.i=i;[p.x,p.y]=proj(p.lat,p.lon);Object.assign(p,EXTRA[p.kk]||{s:[p.kk,p.ru],cap:["",""]});p.key=fold([p.kk,p.ru,p.s[0],p.s[1],p.code||""].join(" "))});
+const route=ROUTE.map(n=>P.findIndex(p=>p.kk===n)).filter(i=>i>=0);
+const NAME=p=>L==="kk"?p.kk:p.ru, ALT=p=>L==="kk"?p.ru:p.kk, SHORT=p=>p.s[li()], CAP=p=>p.cap[li()], DESC=p=>L==="kk"?p.dk:p.d;
+const isPhone=()=>matchMedia("(max-width:900px)").matches;
+const reduce=()=>matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- map + markers ---------- */
+const NS="http://www.w3.org/2000/svg";
+const svg=document.getElementById("map"),world=document.getElementById("world"),mg=document.getElementById("markers"),wrap=document.getElementById("wrap");
+const olSel=document.getElementById("olSel"),olHov=document.getElementById("olHov"),pv=document.getElementById("pv"),card=document.getElementById("card");
+const active=new Set(Object.keys(CATS));let q="",sel=-1,hov=-1,rIdx=-1,lastFocus=null;
+
+P.forEach(p=>{
+  const g=document.createElementNS(NS,"g");g.setAttribute("class","mk");g.setAttribute("tabindex","0");g.setAttribute("role","button");
+  g.innerHTML=`<circle class="hit" r="16"/><circle class="ring" r="13"/><circle class="dot c-${p.c}" r="6.5"/><text></text>`;
+  p.el=g;p.tx=g.querySelector("text");mg.appendChild(g);
+  g.addEventListener("pointerenter",e=>{if(e.pointerType==="mouse"&&!dragging)hover(p.i,true)});
+  g.addEventListener("pointerleave",e=>{if(e.pointerType==="mouse")hover(-1)});
+  g.addEventListener("focus",()=>hover(p.i,true));
+  g.addEventListener("blur",()=>hover(-1));
+  g.addEventListener("click",e=>{e.stopPropagation();if(gesture.blocked)return;open(p.i,{fly:"ensure",from:g})});
+  g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open(p.i,{fly:"ensure",from:g})}});
+});
+
+let k=1,tx=0,ty=0;const KMIN=1,KMAX=14;
+const s0=()=>{const r=svg.getBoundingClientRect();return Math.min(r.width/W,r.height/H)||1};
+// root svg units -> px offset inside the wrap
+function rootToWrap(x,y){const r=svg.getBoundingClientRect(),s=s0();return [(r.width-W*s)/2+x*s,(r.height-H*s)/2+y*s]}
+function wrapToRoot(px,py){const r=svg.getBoundingClientRect(),s=s0();return [(px-(r.width-W*s)/2)/s,(py-(r.height-H*s)/2)/s]}
+const screenOf=p=>rootToWrap(p.x*k+tx,p.y*k+ty);
+function apply(){
+  world.setAttribute("transform",`translate(${tx} ${ty}) scale(${k})`);
+  const m=1/(k*s0());
+  P.forEach(p=>p.el.setAttribute("transform",`translate(${p.x} ${p.y}) scale(${m})`));
+  wrap.classList.toggle("z2",k*s0()>1.5);
+  layoutLabels();
+  if(hov>=0)placePreview(hov);
+}
+function clamp(){const lim=.2;tx=Math.min(W*lim,Math.max(W-W*k-W*lim,tx));ty=Math.min(H*lim,Math.max(H-H*k-H*lim,ty))}
+function zoomAt(f,sx,sy){const nk=Math.min(KMAX,Math.max(KMIN,k*f));f=nk/k;tx=sx-(sx-tx)*f;ty=sy-(sy-ty)*f;k=nk;clamp();apply()}
+let anim;
+function animateTo(k1,tx1,ty1){
+  cancelAnimationFrame(anim);const k0=k,x0=tx,y0=ty,t0=performance.now(),D=reduce()?0:480;
+  const step=t=>{let u=D?Math.min(1,(t-t0)/D):1;u=1-Math.pow(1-u,3);k=k0+(k1-k0)*u;tx=x0+(tx1-x0)*u;ty=y0+(ty1-y0)*u;apply();if(u<1)anim=requestAnimationFrame(step)};
+  anim=requestAnimationFrame(step);
+}
+// free area of the map not covered by the card (wrap px)
+function freeArea(){
+  const wr=wrap.getBoundingClientRect();let a={l:0,t:0,r:wr.width,b:wr.height};
+  if(!card.hidden){const cr=card.getBoundingClientRect();
+    if(isPhone())a.b=Math.min(a.b,cr.top-wr.top);else a.r=Math.min(a.r,cr.left-wr.left);}
+  return a;
+}
+function centerOn(p,nk){
+  const a=freeArea(),cx=(a.l+a.r)/2,cy=(a.t+Math.max(a.t+60,a.b))/2;const [rx,ry]=wrapToRoot(cx,cy);
+  const k1=nk||k;animateTo(k1,rx-p.x*k1,ry-p.y*k1);
+}
+function ensureVisible(p){const a=freeArea(),[x,y]=screenOf(p),m=40;if(x<a.l+m||x>a.r-m||y<a.t+m||y>a.b-m)centerOn(p)}
+
+/* gestures: drag, wheel, pinch; a drag or pinch never opens a card */
+const ptrs=new Map();let lastD=null,moved=0,dragging=false;const gesture={blocked:false};
+svg.addEventListener("wheel",e=>{e.preventDefault();const r=wrap.getBoundingClientRect();const [x,y]=wrapToRoot(e.clientX-r.left,e.clientY-r.top);zoomAt(Math.exp(-e.deltaY*.0016),x,y)},{passive:false});
+wrap.addEventListener("pointerdown",e=>{if(e.target.closest(".ctrl,.card,.pv"))return;ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});if(ptrs.size===1){moved=0;gesture.blocked=false}else gesture.blocked=true;lastD=null});
+wrap.addEventListener("pointermove",e=>{
+  if(!ptrs.has(e.pointerId))return;const prev=ptrs.get(e.pointerId);ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});const s=s0();
+  if(ptrs.size===1){const dx=e.clientX-prev.x,dy=e.clientY-prev.y;moved+=Math.abs(dx)+Math.abs(dy);
+    if(moved>6){if(!dragging){dragging=true;gesture.blocked=true;wrap.classList.add("drag");try{wrap.setPointerCapture(e.pointerId)}catch(_){};if(hov>=0)hover(-1)}tx+=dx/s;ty+=dy/s;clamp();apply()}}
+  else if(ptrs.size===2){const [a,b]=[...ptrs.values()];const d=Math.hypot(a.x-b.x,a.y-b.y);const r=wrap.getBoundingClientRect();const [cx,cy]=wrapToRoot((a.x+b.x)/2-r.left,(a.y+b.y)/2-r.top);if(lastD)zoomAt(d/lastD,cx,cy);lastD=d}
+});
+const up=e=>{ptrs.delete(e.pointerId);if(ptrs.size<2)lastD=null;if(!ptrs.size){dragging=false;wrap.classList.remove("drag");setTimeout(()=>{gesture.blocked=false},0)}};
+wrap.addEventListener("pointerup",up);wrap.addEventListener("pointercancel",up);
+wrap.addEventListener("click",e=>{if(gesture.blocked&&!e.target.closest(".ctrl,.card")){e.stopPropagation();e.preventDefault()}},true);
+document.getElementById("zin").onclick=()=>zoomAt(1.6,...wrapToRoot(...centerPx()));
+document.getElementById("zout").onclick=()=>zoomAt(1/1.6,...wrapToRoot(...centerPx()));
+document.getElementById("zreset").onclick=()=>animateTo(1,0,0);
+function centerPx(){const a=freeArea();return [(a.l+a.r)/2,(a.t+a.b)/2]}
+addEventListener("resize",()=>apply());
+
+/* labels with simple collision avoidance in screen space */
+function layoutLabels(){
+  const s=k*s0(),show=s>1.25,placed=[];
+  const vis=P.filter(p=>!p.el.classList.contains("gone"));
+  vis.forEach(p=>placed.push({l:screenOf(p)[0]-8,t:screenOf(p)[1]-8,r:screenOf(p)[0]+8,b:screenOf(p)[1]+8}));
+  const pri=p=>(p.i===sel?100:0)+(p.i===hov?90:0)+(p.tour?6:0)+(route.includes(p.i)?5:0)+(p.c==="mon"?2:p.c==="rel"?2:0);
+  const order=vis.slice().sort((a,b)=>pri(b)-pri(a));
+  const wr=wrap.getBoundingClientRect();
+  P.forEach(p=>p.tx.classList.remove("show"));
+  if(!show&&sel<0&&hov<0)return;
+  order.forEach(p=>{
+    if(!show&&p.i!==sel&&p.i!==hov)return;
+    const txt=SHORT(p);const w=txt.length*6.6+6,h=15;const [x,y]=screenOf(p);
+    if(x<-20||y<-20||x>wr.width+20||y>wr.height+20)return;
+    const opts=[[11,4,"start",x+11,y-8],[-11,4,"end",x-11-w,y-8],[0,-13,"middle",x-w/2,y-22],[0,20,"middle",x-w/2,y+7]];
+    for(const [dx,dy,anc,l,t] of opts){const box={l,t,r:l+w,b:t+h};
+      if(box.l<4||box.r>wr.width-4||box.t<4||box.b>wr.height-4)continue;
+      if(placed.some(o=>!(box.r<o.l||box.l>o.r||box.b<o.t||box.t>o.b)))continue;
+      placed.push(box);p.tx.textContent=txt;p.tx.setAttribute("x",dx);p.tx.setAttribute("y",dy);p.tx.setAttribute("text-anchor",anc);p.tx.classList.add("show");break}
+  });
+}
+
+/* hover preview: highlight + outline, never moves the map */
+function hover(i,withPreview){
+  hov=i;P.forEach(p=>p.el.classList.toggle("hl",p.i===i));
+  document.querySelectorAll(".row").forEach(r=>r.classList.toggle("hl",+r.dataset.i===i));
+  wrap.classList.toggle("focusing",i>=0||sel>=0);
+  const p=P[i];
+  if(i>=0&&p.out){olHov.setAttribute("d",p.out);olHov.classList.toggle("show",i!==sel)}else olHov.classList.remove("show");
+  if(i<0||!withPreview||i===sel&&!card.hidden){pv.hidden=true;layoutLabels();return}
+  const img=p.por||p.ph;
+  pv.innerHTML=(img?`<img class="img ${p.por?"por":"ph"}" src="${img.src}" alt="">`:"")+`<div class="tx"><div class="cat t-${p.c}">${CAT1[p.c][li()]}</div><b>${esc(NAME(p))}</b>${CAP(p)?`<span>${esc(CAP(p))}</span>`:""}</div>`;
+  pv.hidden=false;placePreview(i);layoutLabels();
+}
+function placePreview(i){
+  if(pv.hidden)return;const p=P[i],[x,y]=screenOf(p),wr=wrap.getBoundingClientRect(),a=freeArea();
+  const w=pv.offsetWidth,h=pv.offsetHeight,m=10;
+  if(x<0||y<0||x>wr.width||y>wr.height){pv.hidden=true;return}
+  let l=x+18,t=y-h-12;
+  if(l+w>a.r-m)l=x-18-w;
+  if(t<a.t+m)t=y+18;
+  if(t+h>a.b-m)t=Math.max(a.t+m,a.b-m-h);
+  l=Math.max(a.l+m,Math.min(l,a.r-m-w));
+  pv.style.transform=`translate(${Math.round(l)}px,${Math.round(t)}px)`;
+}
+
+/* ---------- catalogue ---------- */
+const chips=document.getElementById("chips"),list=document.getElementById("list");
+Object.keys(CATS).forEach(key=>{const b=document.createElement("button");b.className="chip";b.type="button";b.dataset.cat=key;b.setAttribute("aria-pressed","true");
+  b.onclick=()=>{active.has(key)?active.delete(key):active.add(key);b.setAttribute("aria-pressed",active.has(key));render()};chips.appendChild(b)});
+document.getElementById("q").addEventListener("input",e=>{q=fold(e.target.value.trim());render()});
+const visible=p=>active.has(p.c)&&(!q||p.key.includes(q));
+function render(){
+  chips.querySelectorAll(".chip").forEach(b=>{const c=b.dataset.cat;b.innerHTML=`<i class="bg-${c}"></i>${L==="kk"?CATS[c].n:CATS[c].ru} <small>${P.filter(p=>p.c===c).length}</small>`});
+  list.innerHTML="";let n=0;
+  P.forEach(p=>{const v=visible(p);p.el.classList.toggle("gone",!v&&p.i!==sel);if(!v)return;n++;
+    const li_=document.createElement("li");
+    li_.innerHTML=`<button type="button" class="row${p.i===sel?" on":""}" data-i="${p.i}"><span class="dot bg-${p.c}"></span><span class="t"><b>${esc(NAME(p))}</b><span>${esc(CAP(p)||CAT1[p.c][li()])}</span></span>${p.tour?'<span class="b3d">3D</span>':""}</button>`;
+    const b=li_.firstChild;
+    b.onclick=()=>open(p.i,{fly:"zoom",from:b});
+    b.onmouseenter=()=>hover(p.i,true);b.onmouseleave=()=>hover(-1);
+    b.onfocus=()=>hover(p.i,true);b.onblur=()=>hover(-1);
+    list.appendChild(li_)});
+  document.getElementById("empty").hidden=n>0;
+  document.getElementById("listh").textContent=`${n===P.length?T("all"):T("found")} · ${n}`;
+  layoutLabels();
+}
+function renderRoute(){
+  const ol=document.getElementById("stops");ol.innerHTML="";
+  route.forEach((i,n)=>{const p=P[i];const li_=document.createElement("li");
+    li_.innerHTML=`<button type="button" class="${n===rIdx?"on":""}"><b>${n+1}</b><span>${esc(SHORT(p))}<small>${esc(CAP(p))}</small></span></button>`;
+    const b=li_.firstChild;b.onclick=()=>{rIdx=n;open(i,{fly:"zoom",from:b,keepRoute:true})};
+    b.onmouseenter=()=>hover(i,true);b.onmouseleave=()=>hover(-1);ol.appendChild(li_)});
+}
+function renderTours(){const el=document.getElementById("tours");el.innerHTML="";Object.values(TOURS).forEach(t=>{const a=document.createElement("a");a.className="tcard";a.href=t.u;a.target="_blank";a.rel="noopener";a.innerHTML=`<em>3D · 360°</em><b>${esc(L==="kk"?t.t:t.tr)}</b><span>${esc(L==="kk"?t.sk:t.s)}</span>`;el.appendChild(a)})}
+
+/* ---------- card ---------- */
+const ICON={
+ tour:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>',
+ pano:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="9.5" ry="4.5"/><circle cx="12" cy="12" r="1.6"/></svg>',
+ pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>'
+};
+const credit=im=>`${esc(im.by||"")}${im.by?", ":""}<a href="${im.page}" target="_blank" rel="noopener">${esc(im.lic)}</a> · Wikimedia Commons`;
+function open(i,opt={}){
+  const p=P[i];if(!opt.keepRoute)rIdx=route.indexOf(i)>=0&&rIdx>=0?route.indexOf(i):-1;
+  sel=i;lastFocus=opt.from||p.el;
+  P.forEach(o=>o.el.classList.toggle("on",o.i===i));mg.appendChild(p.el);
+  if(p.out){olSel.setAttribute("d",p.out);olSel.classList.add("show")}else olSel.classList.remove("show");
+  olHov.classList.remove("show");pv.hidden=true;
+  const t=p.tour&&TOURS[p.tour];
+  const pano=`https://yandex.kz/maps/?ll=${p.lon},${p.lat}&z=18&l=stv,sta&panorama%5Bpoint%5D=${p.lon},${p.lat}`;
+  const gis=`https://2gis.kz/aktobe/geo/${p.lon},${p.lat}`;
+  const primary=t?`<a class="primary" href="${t.u}" target="_blank" rel="noopener">${ICON.tour}${T("tour")}</a>`:`<a class="primary" href="${pano}" target="_blank" rel="noopener">${ICON.pano}${T("pano")}</a>`;
+  const secs=(t?`<a class="sec" href="${pano}" target="_blank" rel="noopener">${ICON.pano}${T("pano")}</a>`:"")+`<a class="sec" href="${gis}" target="_blank" rel="noopener">${ICON.pin}${T("gis")}</a>`;
+  const thumb=(p.ph||p.por)?`<img class="thumb" src="${(p.ph||p.por).src}" alt="">`:"";
+  const ri=route.indexOf(i),inRoute=rIdx>=0&&ri===rIdx;
+  card.innerHTML=`<button class="grip" type="button" aria-label="${T("more")}" aria-expanded="false"></button>
+   ${p.ph?`<figure class="c-photo"><img src="${p.ph.src}" width="${p.ph.w}" height="${p.ph.h}" alt="${esc(NAME(p))}"></figure><p class="credit">${T("photo")}: ${credit(p.ph)}</p>`:""}
+   <div class="c-in">
+    <div class="c-top"><div class="c-head">${thumb}<div><div class="c-cat t-${p.c}">${L==="kk"?CATS[p.c].n:CATS[p.c].ru}</div><h2 class="c-name" id="c-name" tabindex="-1">${esc(NAME(p))}</h2><p class="c-alt">${esc(ALT(p))}</p></div></div>
+     <button class="x" type="button" aria-label="${T("close")}">×</button></div>
+    ${inRoute?`<div class="rnav"><span>${T("stop")} ${rIdx+1} / ${route.length}</span><div><button type="button" data-r="-1" ${rIdx===0?"disabled":""} aria-label="${T("prev")}">←</button><button type="button" data-r="1" ${rIdx===route.length-1?"disabled":""}>${T("next")} →</button></div></div>`:""}
+    ${p.por?`<div class="person"><img src="${p.por.src}" alt="${T("portrait")}: ${esc(SHORT(p))}"><div><b>${esc(SHORT(p))}</b><span>${esc(CAP(p))}</span><small>${esc(p.por.note[li()])}. ${credit(p.por)}</small></div></div>`:""}
+    ${primary}
+    <button class="more" type="button">${T("more")}</button>
+    <p class="c-text">${esc(DESC(p))}</p>
+    <div class="secs">${secs}</div>
+    <div class="meta">${p.code?`<span>${T("code")}: <b>${p.code}</b></span>`:""}<span>${p.out?`<a href="${p.outSrc}" target="_blank" rel="noopener">${T("outline")}</a>`:T("place")}</span></div>
+   </div>`;
+  card.hidden=false;card.dataset.state="peek";card.scrollTop=0;
+  card.querySelector(".x").onclick=close;
+  const tog=()=>{const full=card.dataset.state!=="full";card.dataset.state=full?"full":"peek";card.querySelector(".grip").setAttribute("aria-expanded",full);card.querySelector(".more").textContent=full?T("less"):T("more");requestAnimationFrame(()=>ensureVisible(p))};
+  card.querySelector(".grip").onclick=tog;card.querySelector(".more").onclick=tog;
+  card.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>{rIdx+= +b.dataset.r;open(route[rIdx],{fly:"zoom",keepRoute:true})});
+  wrap.classList.add("focusing");
+  render();renderRoute();
+  requestAnimationFrame(()=>{
+    if(opt.fly==="zoom")centerOn(p,Math.max(k,p.out?5.5:3.2));else ensureVisible(p);
+    if(opt.from&&opt.from.closest&&opt.from.closest(".side")&&!isPhone())card.querySelector("#c-name").focus({preventScroll:true});
+  });
+}
+function close(){
+  if(card.hidden)return;card.hidden=true;const back=lastFocus;sel=-1;rIdx=-1;
+  P.forEach(o=>o.el.classList.remove("on","hl"));olSel.classList.remove("show");olHov.classList.remove("show");hov=-1;
+  wrap.classList.remove("focusing");render();renderRoute();
+  if(back&&document.contains(back))back.focus({preventScroll:true});
+}
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){if(!card.hidden)close();else{pv.hidden=true;hover(-1)}}});
+// tap on empty map closes the sheet on phones
+svg.addEventListener("click",e=>{if(!e.target.closest(".mk")&&!gesture.blocked&&isPhone())close()});
+
+/* ---------- language ---------- */
+function setLang(l){
+  L=l;try{localStorage.setItem("lang",l)}catch(e){}
+  document.documentElement.lang=l;
+  document.querySelectorAll("[data-i]").forEach(el=>el.textContent=T(el.dataset.i));
+  document.getElementById("h1").innerHTML=T("h1");
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===l));
+  const qi=document.getElementById("q");qi.placeholder=T("ph");qi.setAttribute("aria-label",T("search"));
+  ["zin","zout","zreset"].forEach(id=>{const b=document.getElementById(id);b.setAttribute("aria-label",T(id));b.title=T(id)});
+  svg.setAttribute("aria-label",T("map"));
+  P.forEach(p=>p.el.setAttribute("aria-label",`${NAME(p)}. ${CAT1[p.c][li()]}`));
+  renderTours();renderRoute();
+  if(sel>=0){const f=lastFocus;open(sel,{keepRoute:true});lastFocus=f}else render();
+}
+document.querySelectorAll(".lang button").forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
+
+/* start: city centre */
+k=1.2;tx=W/2-W/2*k;ty=H/2-H*.45*k;clamp();
+setLang(L);apply();requestAnimationFrame(apply);
+</script>

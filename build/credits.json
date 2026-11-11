@@ -1,0 +1,107 @@
+{
+ "abai-portrait": {
+  "page": "https://commons.wikimedia.org/wiki/File:Abai_Kunanbaev.jpg",
+  "lic": "Public domain",
+  "artist": "",
+  "w": 400,
+  "h": 500
+ },
+ "aliya-portrait": {
+  "page": "https://commons.wikimedia.org/wiki/File:Sniper_Aliya_Nurmuhametqyzy_Moldagulova.jpg",
+  "lic": "Public domain",
+  "artist": "автор неизвестен",
+  "w": 331,
+  "h": 413
+ },
+ "doszhanova-portrait": {
+  "page": "https://commons.wikimedia.org/wiki/File:%D0%90%D0%BA%D0%BA%D0%B0%D0%B3%D0%B0%D0%B7_%D0%94%D0%BE%D1%81%D0%B6%D0%B0%D0%BD%D0%BE%D0%B2%D0%B0_(1893-1932).png",
+  "lic": "Public domain",
+  "artist": "Фотоательер",
+  "w": 268,
+  "h": 335
+ },
+ "patsaev-portrait": {
+  "page": "https://commons.wikimedia.org/wiki/File:Viktor_Patsayev.jpg",
+  "lic": "Public domain",
+  "artist": "USSR Post",
+  "w": 260,
+  "h": 325
+ },
+ "nurgasyr-photo": {
+  "page": "https://commons.wikimedia.org/wiki/File:Nur_Ghasyr_mosque_5.jpg",
+  "lic": "CC BY-SA 3.0",
+  "artist": "Yakov Fyodorov",
+  "w": 720,
+  "h": 475
+ },
+ "sobor-photo": {
+  "page": "https://commons.wikimedia.org/wiki/File:St._Nicolas_Cathedral_Aktobe.jpg",
+  "lic": "Public domain",
+  "artist": "en:User:Attila kz",
+  "w": 604,
+  "h": 453
+ },
+ "nurdaulet-photo": {
+  "page": "https://commons.wikimedia.org/wiki/File:Nurdaulet_Aktobe.jpg",
+  "lic": "Public domain",
+  "artist": "en:User:Konchevnik81",
+  "w": 720,
+  "h": 540
+ },
+ "ruhaniyat-photo": {
+  "page": "https://commons.wikimedia.org/wiki/File:Ruhaniyat_museum_(Aktobe).jpeg",
+  "lic": "CC BY-SA 3.0",
+  "artist": "Esetok",
+  "w": 720,
+  "h": 540
+ },
+ "valikhanov-portrait": {
+  "page": "https://commons.wikimedia.org/wiki/File:Chokan_Valikhanov_portrait.jpg",
+  "lic": "Public domain",
+  "artist": "автор неизвестен",
+  "w": 187,
+  "h": 233
+ },
+ "mametova-portrait": {
+  "page": "https://commons.wikimedia.org/wiki/File:%D0%9C%D0%B0%D0%BC%D0%B5%D1%82%D0%BE%D0%B2%D0%B0_1937_%D0%B3%D0%BE%D0%B4.jpg",
+  "lic": "Public domain",
+  "artist": "автор неизвестен",
+  "w": 400,
+  "h": 500
+ },
+ "imanov-portrait": {
+  "page": "https://commons.wikimedia.org/wiki/File:Amangeldy_Imanov_2023_stamp_of_Kazakhstan.jpg",
+  "lic": "Public domain",
+  "artist": "Post of Kazakhstan",
+  "w": 400,
+  "h": 500
+ },
+ "kunaev-portrait": {
+  "page": "https://commons.wikimedia.org/wiki/File:Dinmuhkamed_Konayev.png",
+  "lic": "Public domain",
+  "artist": "Азербайджан-е-Джануби",
+  "w": 400,
+  "h": 500
+ },
+ "kzhubanov-portrait": {
+  "page": "https://commons.wikimedia.org/wiki/File:III-Q-Zhubanov-240x180.jpg",
+  "lic": "CC BY-SA 3.0",
+  "artist": "Aidar",
+  "w": 178,
+  "h": 222
+ },
+ "eset-portrait": {
+  "page": "https://commons.wikimedia.org/wiki/File:Eset_Kotibarov.jpg",
+  "lic": "Public domain",
+  "artist": "Артиллерии подпоручик Антон Степанович Муренко (1837—1875)",
+  "w": 400,
+  "h": 500
+ },
+ "abulkhair-avenue-photo": {
+  "page": "https://commons.wikimedia.org/wiki/File:Abulkhair_Khan_Prospect_2.jpg",
+  "lic": "Public domain",
+  "artist": "Attila hunn",
+  "w": 600,
+  "h": 450
+ }
+}

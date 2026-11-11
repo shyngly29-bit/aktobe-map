@@ -1,0 +1,2777 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-07-28T02:16:18Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 1190460760,
+  "lat": 50.2932404,
+  "lon": 57.1700683,
+  "tags": {
+    "artist_name": "Т. Джанисбеков;Н. Соболев",
+    "description": "Обелиск Славы павшим актюбинцам за Родину на войне в годы Великой Отечественной Войны",
+    "height": "19 m",
+    "historic": "memorial",
+    "man_made": "obelisk",
+    "material": "granite",
+    "memorial": "obelisk",
+    "memorial:conflict": "WW2",
+    "name": "Даңқ обелискі",
+    "name:ru": "Обелиск Славы",
+    "official_name": "Азамат соғысы мен Ұлы Отан соғысы жылдарында Отан үшін майданда қаза тапқан ақтөбеліктерге орнатылған Даңқ обелискі",
+    "official_name:ru": "Обелиск Славы в честь актюбинцев, павших в боях за Родину в годы гражданской и Великой Отечественной войн",
+    "start_date": "1984",
+    "wikidata": "Q65153682",
+    "wikipedia": "ru:Обелиск Славы (Актобе)"
+  }
+},
+{
+  "type": "node",
+  "id": 2228815468,
+  "lat": 50.2876907,
+  "lon": 57.1523788,
+  "tags": {
+    "description:ru": "Мемориальный памятный комплекс Герою Советского Союза А. Молдагуловой",
+    "historic": "memorial",
+    "inscription": "Әлия",
+    "memorial": "statue",
+    "name": "Әлия Молдағұлова",
+    "name:ru": "Алие Молдагуловой"
+  }
+},
+{
+  "type": "node",
+  "id": 2473475506,
+  "lat": 50.2970550,
+  "lon": 57.1553955,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "bust",
+    "name": "Абай Құнанбайұлы",
+    "name:kk": "Абай Құнанбайұлына",
+    "name:pl": "Abaja Kunanbajewa",
+    "name:ru": "Абаю Кунанбаеву"
+  }
+},
+{
+  "type": "node",
+  "id": 2586463672,
+  "lat": 50.3202015,
+  "lon": 57.2342891,
+  "tags": {
+    "int_name": "Maxabbat tawı",
+    "name": "Махаббат тауы",
+    "name:kk": "Махаббат тауы",
+    "name:ru": "гора Любви",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 2925966302,
+  "lat": 50.2837585,
+  "lon": 57.1473797,
+  "tags": {
+    "historic": "memorial",
+    "name": "Сәңкібай батыр",
+    "name:ru": "Санкибай батыру"
+  }
+},
+{
+  "type": "node",
+  "id": 2926899407,
+  "lat": 50.3378805,
+  "lon": 57.1346518,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "Металлург"
+  }
+},
+{
+  "type": "node",
+  "id": 3633686968,
+  "lat": 50.2836321,
+  "lon": 57.2299969,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "Әйтеке би",
+    "name:ru": "Айтеке би"
+  }
+},
+{
+  "type": "node",
+  "id": 3634736249,
+  "lat": 50.2877585,
+  "lon": 57.1873881,
+  "tags": {
+    "country": "KZ",
+    "flag:name": "Kazakhstan",
+    "flag:type": "national",
+    "flag:wikidata": "Q131650",
+    "height": "91 m",
+    "man_made": "flagpole",
+    "name": "Қазақстан туы",
+    "name:ru": "Флаг Казахстана",
+    "subject": "Kazakhstan",
+    "subject:wikidata": "Q232",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 3657646756,
+  "lat": 50.3129290,
+  "lon": 57.1470497,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "bust",
+    "name": "Ғазиза Жұбанова",
+    "name:kk": "Ғазиза Жұбановаға",
+    "name:ru": "Газизе Жубановой"
+  }
+},
+{
+  "type": "node",
+  "id": 3657646757,
+  "lat": 50.3131755,
+  "lon": 57.1468744,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "Ахмет Жұбанов",
+    "name:kk": "Ахмет Жұбанов",
+    "name:ru": "Ахмету Жубанову"
+  }
+},
+{
+  "type": "node",
+  "id": 3657652906,
+  "lat": 50.3136485,
+  "lon": 57.1488257,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "sculpture",
+    "name": "Аштық және саяси репрессия құрбандарына",
+    "name:ru": "Жертвам голода и политических репрессий",
+    "start_date": "2018-06-01"
+  }
+},
+{
+  "type": "node",
+  "id": 4099598476,
+  "lat": 50.2824200,
+  "lon": 57.2266734,
+  "tags": {
+    "architect": "Л.В. Рапутов",
+    "artist_name": "Е.Н. Штамм",
+    "historic": "memorial",
+    "memorial": "bust",
+    "name": "Әлия Молдағұлова",
+    "name:ru": "Алие Молдагуловой",
+    "start_date": "1960"
+  }
+},
+{
+  "type": "node",
+  "id": 4104047155,
+  "lat": 50.2859947,
+  "lon": 57.2279540,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "1919 жылдағы Революция күрескерлеріне",
+    "name:ru": "Борцам Революции 1919 года"
+  }
+},
+{
+  "type": "node",
+  "id": 4104047156,
+  "lat": 50.2857688,
+  "lon": 57.2284866,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "bust",
+    "name": "А.С. Пушкинге",
+    "name:ru": "А.С. Пушкину"
+  }
+},
+{
+  "type": "node",
+  "id": 4105467021,
+  "lat": 50.2840388,
+  "lon": 57.2204302,
+  "tags": {
+    "historic": "memorial",
+    "inscription": "Памятник-обелиск Пушка в честь 312-й стрелковой дивизии и 101-й стрелковой бригады, 1985 год",
+    "memorial": "war_memorial",
+    "name": "Пушка",
+    "start_date": "1985"
+  }
+},
+{
+  "type": "node",
+  "id": 4105812137,
+  "lat": 50.2822738,
+  "lon": 57.2168346,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "bust",
+    "name": "Ж. Кереев",
+    "name:ru": "Ж. Керееву"
+  }
+},
+{
+  "type": "node",
+  "id": 4262164690,
+  "lat": 50.3187760,
+  "lon": 57.1470134,
+  "tags": {
+    "historic": "memorial",
+    "inscription": "Низкий поклон актюбинцам-участникам ликвидации аварии на Чернобыльской АЭС в 1986-1990 годах",
+    "memorial": "sculpture",
+    "name": "Чернобыль атом электр станциясындағы апатты залалсыздандыруға ақтөбелік қатысушыларға",
+    "name:ru": "Актюбинцам-участникам ликвидации аварии на Чернобыльской АЭС"
+  }
+},
+{
+  "type": "node",
+  "id": 4314660034,
+  "lat": 50.2903709,
+  "lon": 57.1612172,
+  "tags": {
+    "artwork_type": "sculpture",
+    "name": "Домбыра",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 4315769991,
+  "lat": 50.3117477,
+  "lon": 57.1461860,
+  "tags": {
+    "historic": "monument",
+    "name": "Тілеу Батыр",
+    "name:ru": "Тлеу Батыру"
+  }
+},
+{
+  "type": "node",
+  "id": 4336693591,
+  "lat": 50.2886212,
+  "lon": 57.1580848,
+  "tags": {
+    "addr:city": "Ақтөбе",
+    "addr:housenumber": "47",
+    "addr:street": "Әлия Молдағұлова даңғылы",
+    "contact:instagram": "aliya.muzeyi",
+    "museum": "person",
+    "name": "Әлия музейі",
+    "name:ru": "Музей Алии",
+    "official_name": "Кеңес Одағының батыры Әлия Молдағұлованың облыстық мемориалды музейі",
+    "official_name:ru": "Областной мемориальный музей Героя Советского Союза Алии Молдагуловой",
+    "opening_hours": "Tu-Su 09:00-18:00",
+    "operator": "Ақтөбе облысының мәдениет, архивтер және құжаттама басқармасы",
+    "operator:type": "government",
+    "phone": "+7 7132 521598",
+    "tourism": "museum",
+    "website": "https://aliya-museum.kz/"
+  }
+},
+{
+  "type": "node",
+  "id": 4386628391,
+  "lat": 50.3137144,
+  "lon": 57.1429187,
+  "tags": {
+    "amenity": "place_of_worship",
+    "denomination": "jehovahs_witness",
+    "name": "Ехоба Куәгерлердің Патшалық сарайы",
+    "name:en": "Jehovah’s Witnesses Kingdom Hall",
+    "name:ru": "Зал Царства Свидетели Иеговы",
+    "opening_hours": "Mo-Su 09:00-18:00",
+    "religion": "christian",
+    "website": "https://www.jw.org/"
+  }
+},
+{
+  "type": "node",
+  "id": 4389270503,
+  "lat": 50.3022620,
+  "lon": 57.1581512,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "stele",
+    "name": "Жауынгер-интернационалистерге",
+    "name:ru": "Воинам-интернационалистам",
+    "war_memorial": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 4420151089,
+  "lat": 50.3023543,
+  "lon": 57.1611310,
+  "tags": {
+    "description": "Памятник героям трилогии А. Нурпеисова \"Кровь и пот\"",
+    "historic": "monument",
+    "name": "Қан мен тер",
+    "name:kk": "Қан мен тер",
+    "name:ru": "Кровь и пот"
+  }
+},
+{
+  "type": "node",
+  "id": 4486488891,
+  "lat": 50.2886756,
+  "lon": 57.1668133,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "bust",
+    "name": "Мөңке би Тілеуұлына",
+    "name:ru": "Монке би Тилеуулы"
+  }
+},
+{
+  "type": "node",
+  "id": 4500646889,
+  "lat": 50.3164678,
+  "lon": 57.1337159,
+  "tags": {
+    "addr:street": "улица Актюбинская",
+    "amenity": "place_of_worship",
+    "name:en": "Seventh-day Adventist Church",
+    "name:ru": "Церковь Христиан Адвентистов Седьмого Дня",
+    "religion": "christian"
+  }
+},
+{
+  "type": "node",
+  "id": 4520298008,
+  "lat": 50.2933013,
+  "lon": 57.1590026,
+  "tags": {
+    "heritage": "2",
+    "historic": "memorial",
+    "memorial": "bust",
+    "name": "В. И. Пацаев",
+    "name:ru": "В. И. Пацаеву",
+    "start_date": "1976"
+  }
+},
+{
+  "type": "node",
+  "id": 4520343389,
+  "lat": 50.2854608,
+  "lon": 57.2274899,
+  "tags": {
+    "architect": "И. Белоцерковский",
+    "artist_name": "А. Исаев",
+    "historic": "memorial",
+    "memorial": "bust",
+    "name": "Памятник А. Джангельдину",
+    "start_date": "1973"
+  }
+},
+{
+  "type": "node",
+  "id": 4520348713,
+  "lat": 50.2851276,
+  "lon": 57.2307782,
+  "tags": {
+    "full_name": "Қазақ әдебиетінің классиктері - халық жазушысы Тахауи Ахтанов пен халық ақыны Қуандық Шаңғытбаевқа",
+    "full_name:ru": "Классикам казахской литературы Т. Ахтанову и К. Шангитбаеву",
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "Т. Ахтанов пен Қ. Шаңғытбаевқа",
+    "name:ru": "Т. Ахтанову и К. Шангитбаеву"
+  }
+},
+{
+  "type": "node",
+  "id": 4520361928,
+  "lat": 50.2954971,
+  "lon": 57.1564542,
+  "tags": {
+    "historic": "memorial",
+    "inscription": "Нұрпейіс Байғанин",
+    "memorial": "bust",
+    "name": "Нұрпейіс Байғанин",
+    "name:ru": "Нурпеису Байганину"
+  }
+},
+{
+  "type": "node",
+  "id": 4520386290,
+  "lat": 50.2978920,
+  "lon": 57.1637122,
+  "tags": {
+    "artist_name": "Жадигер Кенбай и Виктор Скоробов",
+    "artwork_type": "statue",
+    "memorial": "yes",
+    "name": "Біздің оқырман",
+    "name:ru": "Наш читатель",
+    "start_date": "2006-06-24",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 4520405516,
+  "lat": 50.2856922,
+  "lon": 57.1506242,
+  "tags": {
+    "description": "Памятник-бюст дважды Герою Советского Союза Т. Бигельдинову",
+    "historic": "memorial",
+    "memorial": "bust",
+    "name": "Т. Бигельдинову",
+    "name:ru": "Т. Бигельдинову"
+  }
+},
+{
+  "type": "node",
+  "id": 5289671508,
+  "lat": 50.2840094,
+  "lon": 57.1845133,
+  "tags": {
+    "historic": "memorial",
+    "material": "stone",
+    "memorial": "stele",
+    "name": "Қазақ халқына мың алғыс стеласы",
+    "name:ru": "Стела благодарности казахскому народу"
+  }
+},
+{
+  "type": "node",
+  "id": 5299461016,
+  "lat": 50.2970617,
+  "lon": 57.1564364,
+  "tags": {
+    "artwork_type": "sculpture",
+    "name": "Алтын адам",
+    "name:en": "The Golden Man",
+    "name:ru": "Золотой человек",
+    "start_date": "2008",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 5306191262,
+  "lat": 50.2795620,
+  "lon": 57.1989427,
+  "tags": {
+    "artwork_type": "sculpture",
+    "name": "100 теңге",
+    "name:ru": "100 тенге",
+    "start_date": "2017-07",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 5314649425,
+  "lat": 50.2818276,
+  "lon": 57.1889009,
+  "tags": {
+    "email": "ruhaniyat.muzei@mail.ru",
+    "name": "Руханият",
+    "opening_hours": "Mo-Fr 09:00-13:00, 14:00-18:00",
+    "phone": "+7 7132 77-43-39",
+    "start_date": "2011-12-08",
+    "tourism": "museum",
+    "website": "http://www.muzei-rukhaniyat.kz"
+  }
+},
+{
+  "type": "node",
+  "id": 5316583589,
+  "lat": 50.2782640,
+  "lon": 57.2039208,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "plaque",
+    "name": "Зоя Космодемьянская"
+  }
+},
+{
+  "type": "node",
+  "id": 5316583590,
+  "lat": 50.2782598,
+  "lon": 57.1987729,
+  "tags": {
+    "historic": "memorial",
+    "inscription": "Григорий Павлович Мясоедов",
+    "memorial": "plaque",
+    "name": "Г.П. Мясоедов"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102248,
+  "lat": 50.2879607,
+  "lon": 57.1534900,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "В.А. Андреев"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102249,
+  "lat": 50.2880006,
+  "lon": 57.1536037,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "А.Г. Батурин",
+    "subject:wikidata": "Q18236272",
+    "subject:wikipedia": "ru:Батурин, Алексей Георгиевич"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102250,
+  "lat": 50.2880324,
+  "lon": 57.1537169,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "И.Т. Білтабанов",
+    "name:ru": "И.Т. Билтабанов",
+    "subject:wikidata": "Q4076863",
+    "subject:wikipedia": "ru:Балтабанов, Имангали Таукешевич"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102251,
+  "lat": 50.2880724,
+  "lon": 57.1538307,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "С.В. Вавилов",
+    "subject:wikidata": "Q12562032",
+    "subject:wikipedia": "ru:Вавилов, Сергей Васильевич"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102252,
+  "lat": 50.2881013,
+  "lon": 57.1539393,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "Н.Д. Власов",
+    "subject:wikidata": "Q12556262",
+    "subject:wikipedia": "ru:Власов, Николай Дмитриевич"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102253,
+  "lat": 50.2881413,
+  "lon": 57.1540531,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "К.Я. Губин",
+    "subject:wikidata": "Q12549753",
+    "subject:wikipedia": "ru:Губин, Константин Яковлевич"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102254,
+  "lat": 50.2881734,
+  "lon": 57.1541737,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "А.А. Гришин",
+    "subject:wikidata": "Q17333323",
+    "subject:wikipedia": "ru:Гришин, Александр Алексеевич"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102255,
+  "lat": 50.2882133,
+  "lon": 57.1542874,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "Ш.Т. Еркінов",
+    "name:ru": "Ш.Т. Еркинов",
+    "subject:wikidata": "Q17333512",
+    "subject:wikipedia": "ru:Еркинов, Шукир Танатырович"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102256,
+  "lat": 50.2882451,
+  "lon": 57.1544006,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "А. Жанзаков",
+    "subject:wikidata": "Q10854139",
+    "subject:wikipedia": "ru:Жанзаков, Абдулла"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102257,
+  "lat": 50.2882851,
+  "lon": 57.1545144,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "Р.И. Кутуев",
+    "subject:wikidata": "Q15207268",
+    "subject:wikipedia": "ru:Кутуев, Рауф Ибрагимович"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102258,
+  "lat": 50.2883140,
+  "lon": 57.1546230,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "В.Г. Козенков",
+    "subject:wikidata": "Q12537732",
+    "subject:wikipedia": "ru:Козенков, Василий Георгиевич"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102259,
+  "lat": 50.2883521,
+  "lon": 57.1547348,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "М.П. Колесников",
+    "subject:wikidata": "Q12554156",
+    "subject:wikipedia": "ru:Колесников, Михаил Петрович (Герой Советского Союза)"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102260,
+  "lat": 50.2884598,
+  "lon": 57.1550631,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "Ф.Ф. Озмитель",
+    "subject:wikidata": "Q13033273",
+    "subject:wikipedia": "ru:Озмитель, Фёдор Фёдорович"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102261,
+  "lat": 50.2884218,
+  "lon": 57.1549513,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "Г.П. Мясоедов",
+    "subject:wikidata": "Q12539602",
+    "subject:wikipedia": "ru:Мясоедов, Григорий Павлович"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102262,
+  "lat": 50.2883929,
+  "lon": 57.1548426,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "Е.К. Мазков",
+    "subject:wikidata": "Q12541525",
+    "subject:wikipedia": "ru:Мазков, Евдоким Константинович"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102263,
+  "lat": 50.2884972,
+  "lon": 57.1551887,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "И.М. Пятковский",
+    "subject:wikidata": "Q12137136",
+    "subject:wikipedia": "ru:Пятковский, Иван Максимович"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102264,
+  "lat": 50.2885812,
+  "lon": 57.1551245,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "Н.Г. Папилов",
+    "subject:wikidata": "Q18407439",
+    "subject:wikipedia": "ru:Папилов, Николай Гаврилович"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102265,
+  "lat": 50.2885438,
+  "lon": 57.1550023,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "Н.Н. Оноприенко",
+    "subject:wikidata": "Q12556300",
+    "subject:wikipedia": "ru:Оноприенко, Николай Николаевич"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102266,
+  "lat": 50.2885057,
+  "lon": 57.1548871,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "А.Н. Молдагулова",
+    "subject:wikidata": "Q578366",
+    "subject:wikipedia": "ru:Молдагулова, Алия Нурмухамбетовна"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102267,
+  "lat": 50.2884769,
+  "lon": 57.1547784,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "М.С. Кожемякин",
+    "subject:wikidata": "Q12554160",
+    "subject:wikipedia": "ru:Кожемякин, Михаил Степанович"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102268,
+  "lat": 50.2884349,
+  "lon": 57.1546706,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "Н.С. Королёв",
+    "subject:wikidata": "Q15069554",
+    "subject:wikipedia": "ru:Королёв, Николай Степанович"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102269,
+  "lat": 50.2883980,
+  "lon": 57.1545588,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "М.Т. Кошелев",
+    "subject:wikidata": "Q4236986",
+    "subject:wikipedia": "ru:Кошелев, Михаил Тимофеевич"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102270,
+  "lat": 50.2883691,
+  "lon": 57.1544502,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "П.А. Кашпуров",
+    "subject:wikidata": "Q12558611",
+    "subject:wikipedia": "ru:Кашпуров, Пётр Афанасьевич"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102271,
+  "lat": 50.2883291,
+  "lon": 57.1543364,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "Қ. Жазықов",
+    "name:ru": "К. Жазыков",
+    "subject:wikidata": "Q16438082",
+    "subject:wikipedia": "ru:Жазыков, Кужабай"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102272,
+  "lat": 50.2882973,
+  "lon": 57.1542233,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "С. Ешбаев",
+    "wikipedia": "ru:Ешбаев Сарсенгали"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102273,
+  "lat": 50.2882573,
+  "lon": 57.1541112,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "И.У. Гринько",
+    "subject:wikidata": "Q12546830",
+    "subject:wikipedia": "ru:Гринько, Иван Устинович"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102274,
+  "lat": 50.2882253,
+  "lon": 57.1539889,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "А.С. Гуцало",
+    "subject:wikidata": "Q12528299",
+    "subject:wikipedia": "ru:Гуцало, Александр Семёнович"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102275,
+  "lat": 50.2881853,
+  "lon": 57.1538751,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "В.Ф. Величко",
+    "subject:wikidata": "Q12537600",
+    "subject:wikipedia": "ru:Величко, Валерий Фёдорович"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102276,
+  "lat": 50.2881564,
+  "lon": 57.1537665,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "В.К. Бойченко",
+    "subject:wikidata": "Q4090500",
+    "subject:wikipedia": "ru:Бойченко, Виктор Кузьмич"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102277,
+  "lat": 50.2881164,
+  "lon": 57.1536527,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "М. Бөкенбаев",
+    "name:ru": "М. Букенбаев",
+    "subject:wikidata": "Q4098553",
+    "subject:wikipedia": "ru:Букенбаев, Малкеждар"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102278,
+  "lat": 50.2880846,
+  "lon": 57.1535395,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "Ф.Ф. Акимов",
+    "subject:wikidata": "Q4059519",
+    "subject:wikipedia": "ru:Акимов, Фёдор Филиппович"
+  }
+},
+{
+  "type": "node",
+  "id": 5318102279,
+  "lat": 50.2880447,
+  "lon": 57.1534258,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "А.М. Алиев",
+    "subject:wikidata": "Q4062271",
+    "subject:wikipedia": "ru:Алиев, Александр Мамедович"
+  }
+},
+{
+  "type": "node",
+  "id": 5318924277,
+  "lat": 50.2834132,
+  "lon": 57.1656469,
+  "tags": {
+    "artwork_type": "sculpture",
+    "name": "Ғашықтар мүсіні",
+    "name:ru": "Скульптура влюблённых",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 5319689883,
+  "lat": 50.3001447,
+  "lon": 57.1629196,
+  "tags": {
+    "artwork_type": "sculpture",
+    "name": "Арка в форме сердца",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 5320148011,
+  "lat": 50.2892694,
+  "lon": 57.1524157,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "bust",
+    "name": "Қ.Қ. Жұбанов ескерткіші",
+    "name:ru": "Памятник К.К. Жубанову"
+  }
+},
+{
+  "type": "node",
+  "id": 5325116325,
+  "lat": 50.2931887,
+  "lon": 57.1700795,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "Мәңгілік алау",
+    "name:en": "Eternal Flame",
+    "name:kk": "Мәңгілік алау",
+    "name:ru": "Вечный огонь"
+  }
+},
+{
+  "type": "node",
+  "id": 5325341814,
+  "lat": 50.2925494,
+  "lon": 57.1679987,
+  "tags": {
+    "artist_name": "Бектас Армат",
+    "artwork_type": "sculpture",
+    "height": "5.40",
+    "material": "bronze",
+    "name": "Бақыт бағанасы",
+    "name:ru": "Стела счастья",
+    "start_date": "2009-09-16",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 5325343081,
+  "lat": 50.2886611,
+  "lon": 57.1553952,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "М.С. Прохоров",
+    "subject:wikidata": "Q4382168",
+    "subject:wikipedia": "ru:Прохоров, Михаил Семёнович"
+  }
+},
+{
+  "type": "node",
+  "id": 5325343082,
+  "lat": 50.2888803,
+  "lon": 57.1560792,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "В.И. Пацаев",
+    "subject:wikidata": "Q358525",
+    "subject:wikipedia": "ru:Пацаев, Виктор Иванович"
+  }
+},
+{
+  "type": "node",
+  "id": 5325343083,
+  "lat": 50.2888429,
+  "lon": 57.1559536,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "Т.К. Щербанев",
+    "subject:wikidata": "Q12565712",
+    "subject:wikipedia": "ru:Щербанёв, Тимофей Карпович"
+  }
+},
+{
+  "type": "node",
+  "id": 5325343084,
+  "lat": 50.2888048,
+  "lon": 57.1558418,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "Ф.А. Шатров",
+    "subject:wikidata": "Q18280137",
+    "subject:wikipedia": "ru:Шатров, Фёдор Анисимович"
+  }
+},
+{
+  "type": "node",
+  "id": 5325343085,
+  "lat": 50.2887760,
+  "lon": 57.1557331,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "І. Үргенішбаев",
+    "name:ru": "И. Ургенишбаев",
+    "subject:wikidata": "Q18279111",
+    "subject:wikipedia": "ru:Ургенишбаев, Идрис"
+  }
+},
+{
+  "type": "node",
+  "id": 5325343086,
+  "lat": 50.2887351,
+  "lon": 57.1556253,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "В.П. Синчук",
+    "subject:wikidata": "Q4420493",
+    "subject:wikipedia": "ru:Синчук, Василий Прокофьевич"
+  }
+},
+{
+  "type": "node",
+  "id": 5325343087,
+  "lat": 50.2886971,
+  "lon": 57.1555135,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "В.Я. Синельников",
+    "wikidata": "Q31194653",
+    "wikipedia": "kk:Синельников Валерий Яковлевич"
+  }
+},
+{
+  "type": "node",
+  "id": 5325343088,
+  "lat": 50.2888010,
+  "lon": 57.1561421,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "В.М. Письменный",
+    "subject:wikidata": "Q4363756",
+    "subject:wikipedia": "ru:Письменный, Вячеслав Михайлович"
+  }
+},
+{
+  "type": "node",
+  "id": 5325343089,
+  "lat": 50.2887636,
+  "lon": 57.1560165,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "В.С. Шахрай",
+    "subject:wikidata": "Q4521351",
+    "subject:wikipedia": "ru:Шахрай, Василий Семёнович"
+  }
+},
+{
+  "type": "node",
+  "id": 5325343090,
+  "lat": 50.2887255,
+  "lon": 57.1559047,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "Л.П. Шиловский",
+    "subject:wikidata": "Q12551794",
+    "subject:wikipedia": "ru:Шиловский, Леонид Прокофьевич"
+  }
+},
+{
+  "type": "node",
+  "id": 5325343091,
+  "lat": 50.2886967,
+  "lon": 57.1557960,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "М.И. Фурсов",
+    "subject:wikidata": "Q15063026",
+    "subject:wikipedia": "ru:Фурсов, Михаил Иванович"
+  }
+},
+{
+  "type": "node",
+  "id": 5325343092,
+  "lat": 50.2886558,
+  "lon": 57.1556882,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "Н.В. Терещенко",
+    "subject:wikidata": "Q18278584",
+    "subject:wikipedia": "ru:Терещенко, Николай Владимирович"
+  }
+},
+{
+  "type": "node",
+  "id": 5325343093,
+  "lat": 50.2886178,
+  "lon": 57.1555764,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "И.М. Стариков",
+    "subject:wikidata": "Q17333324",
+    "subject:wikipedia": "ru:Стариков, Игнат Михайлович"
+  }
+},
+{
+  "type": "node",
+  "id": 5325343094,
+  "lat": 50.2885818,
+  "lon": 57.1554582,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "war_memorial",
+    "name": "Ш.Х. Рафиков",
+    "subject:wikidata": "Q17333325",
+    "subject:wikipedia": "ru:Рафиков, Шамсутдин Хаснутдинович"
+  }
+},
+{
+  "type": "node",
+  "id": 5338514857,
+  "lat": 50.2850428,
+  "lon": 57.1476443,
+  "tags": {
+    "aircraft:type": "military",
+    "historic": "aircraft",
+    "name": "Ан-12",
+    "name:en": "Antonov An-12",
+    "tourism": "attraction",
+    "wikidata": "Q271559",
+    "wikipedia": "ru:Ан-12"
+  }
+},
+{
+  "type": "node",
+  "id": 5338514870,
+  "lat": 50.2848436,
+  "lon": 57.1477917,
+  "tags": {
+    "aircraft:type": "military",
+    "historic": "aircraft",
+    "name": "Як-18Т",
+    "name:en": "Yakovlev Yak-18T",
+    "tourism": "attraction",
+    "wikidata": "Q4536595",
+    "wikipedia": "ru:Як-18Т"
+  }
+},
+{
+  "type": "node",
+  "id": 5338514871,
+  "lat": 50.2847046,
+  "lon": 57.1474969,
+  "tags": {
+    "aircraft:type": "military",
+    "historic": "aircraft",
+    "name": "Ан-26",
+    "name:en": "Antonov An-26",
+    "tourism": "attraction",
+    "wikidata": "Q62156",
+    "wikipedia": "ru:Ан-26"
+  }
+},
+{
+  "type": "node",
+  "id": 5338514872,
+  "lat": 50.2844851,
+  "lon": 57.1475965,
+  "tags": {
+    "aircraft:type": "airliner",
+    "historic": "aircraft",
+    "name": "Як-40",
+    "name:en": "Yakovlev Yak-40",
+    "tourism": "attraction",
+    "wikidata": "Q505663",
+    "wikipedia": "ru:Як-40"
+  }
+},
+{
+  "type": "node",
+  "id": 5338514873,
+  "lat": 50.2841955,
+  "lon": 57.1479136,
+  "tags": {
+    "aircraft:type": "military",
+    "historic": "aircraft",
+    "name": "Ил-28",
+    "name:en": "Ilyushin Il-28",
+    "tourism": "attraction",
+    "wikidata": "Q652911",
+    "wikipedia": "ru:Ил-28"
+  }
+},
+{
+  "type": "node",
+  "id": 5338514874,
+  "lat": 50.2839747,
+  "lon": 57.1480539,
+  "tags": {
+    "aircraft:type": "military",
+    "historic": "aircraft",
+    "name": "Су-25",
+    "name:en": "Sukhoi Su-25",
+    "tourism": "attraction",
+    "wikidata": "Q192137",
+    "wikipedia": "ru:Су-25"
+  }
+},
+{
+  "type": "node",
+  "id": 5338514875,
+  "lat": 50.2838422,
+  "lon": 57.1481779,
+  "tags": {
+    "aircraft:type": "military",
+    "historic": "aircraft",
+    "name": "Аэро Л-39 Альбатрос",
+    "name:en": "Aero L-39 Albatros",
+    "tourism": "attraction",
+    "wikidata": "Q155899",
+    "wikipedia": "ru:Aero L-39 Albatros"
+  }
+},
+{
+  "type": "node",
+  "id": 5338514876,
+  "lat": 50.2837227,
+  "lon": 57.1483019,
+  "tags": {
+    "aircraft:type": "military",
+    "historic": "aircraft",
+    "name": "Аэро Л-29 Дельфин",
+    "name:en": "Aero L-29 Delfin",
+    "tourism": "attraction",
+    "wikidata": "Q167277",
+    "wikipedia": "ru:Aero L-29 Delfin"
+  }
+},
+{
+  "type": "node",
+  "id": 5338514877,
+  "lat": 50.2837500,
+  "lon": 57.1487023,
+  "tags": {
+    "aircraft:type": "helicopter",
+    "historic": "aircraft",
+    "name": "Ми-6",
+    "name:en": "Mil Mi-6",
+    "tourism": "attraction",
+    "wikidata": "Q744635",
+    "wikipedia": "ru:Ми-6"
+  }
+},
+{
+  "type": "node",
+  "id": 5338514878,
+  "lat": 50.2840344,
+  "lon": 57.1484523,
+  "tags": {
+    "aircraft:type": "helicopter",
+    "historic": "aircraft",
+    "name": "Ми-8",
+    "name:en": "Mil Mi-8",
+    "tourism": "attraction",
+    "wikidata": "Q155635",
+    "wikipedia": "ru:Ми-8",
+    "wikipedia:en": "en:Mil Mi-8"
+  }
+},
+{
+  "type": "node",
+  "id": 5338514879,
+  "lat": 50.2846266,
+  "lon": 57.1487364,
+  "tags": {
+    "aircraft:type": "military",
+    "historic": "aircraft",
+    "name": "Су-24",
+    "name:en": "Sukhoi Su-24",
+    "tourism": "attraction",
+    "wikidata": "Q210413",
+    "wikipedia": "ru:Су-24"
+  }
+},
+{
+  "type": "node",
+  "id": 5338514880,
+  "lat": 50.2847171,
+  "lon": 57.1489452,
+  "tags": {
+    "aircraft:type": "military",
+    "historic": "aircraft",
+    "name": "Су-17",
+    "name:en": "Sukhoi Su-17",
+    "tourism": "attraction",
+    "wikidata": "Q183146",
+    "wikipedia": "ru:Су-17"
+  }
+},
+{
+  "type": "node",
+  "id": 5338514881,
+  "lat": 50.2848137,
+  "lon": 57.1490821,
+  "tags": {
+    "aircraft:type": "military",
+    "historic": "aircraft",
+    "name": "МиГ-23",
+    "name:en": "Mikoyan-Gurevich MiG-23",
+    "tourism": "attraction",
+    "wikidata": "Q155679",
+    "wikipedia": "ru:МиГ-23"
+  }
+},
+{
+  "type": "node",
+  "id": 5338514882,
+  "lat": 50.2848858,
+  "lon": 57.1492117,
+  "tags": {
+    "aircraft:type": "military",
+    "historic": "aircraft",
+    "name": "МиГ-21",
+    "name:en": "Mikoyan-Gurevich MiG-21",
+    "tourism": "attraction",
+    "wikidata": "Q150609",
+    "wikipedia": "ru:МиГ-21"
+  }
+},
+{
+  "type": "node",
+  "id": 5338514883,
+  "lat": 50.2850270,
+  "lon": 57.1487172,
+  "tags": {
+    "aircraft:type": "military",
+    "historic": "aircraft",
+    "name": "МиГ-29",
+    "name:en": "Mikoyan MiG-29",
+    "tourism": "attraction",
+    "wikidata": "Q130681",
+    "wikipedia": "ru:МиГ-29"
+  }
+},
+{
+  "type": "node",
+  "id": 5338514884,
+  "lat": 50.2850991,
+  "lon": 57.1489260,
+  "tags": {
+    "aircraft:type": "military",
+    "historic": "aircraft",
+    "name": "МиГ-27",
+    "name:en": "Mikoyan MiG-27",
+    "tourism": "attraction",
+    "wikidata": "Q234069",
+    "wikipedia": "ru:МиГ-27"
+  }
+},
+{
+  "type": "node",
+  "id": 5338514885,
+  "lat": 50.2851420,
+  "lon": 57.1491613,
+  "tags": {
+    "aircraft:type": "helicopter",
+    "historic": "aircraft",
+    "name": "Ми-24",
+    "name:en": "Mil Mi-24",
+    "tourism": "attraction",
+    "wikidata": "Q155651",
+    "wikipedia": "ru:Ми-24"
+  }
+},
+{
+  "type": "node",
+  "id": 5338527662,
+  "lat": 50.2869212,
+  "lon": 57.1528476,
+  "tags": {
+    "aircraft:type": "military",
+    "historic": "aircraft",
+    "name": "Аэро Л-39 Альбатрос",
+    "name:en": "Aero L-39 Albatros",
+    "tourism": "attraction",
+    "wikidata": "Q155899",
+    "wikipedia": "ru:Aero L-39 Albatros",
+    "wikipedia:en": "Aero L-39 Albatros"
+  }
+},
+{
+  "type": "node",
+  "id": 5338527663,
+  "lat": 50.2864411,
+  "lon": 57.1507553,
+  "tags": {
+    "aircraft:type": "military",
+    "historic": "aircraft",
+    "name": "Як-50",
+    "name:en": "Yakovlev Yak-50",
+    "tourism": "attraction",
+    "wikidata": "Q508308",
+    "wikipedia": "ru:Як-50",
+    "wikipedia:en": "Yakovlev Yak-50 (1975)"
+  }
+},
+{
+  "type": "node",
+  "id": 6117682617,
+  "lat": 50.2522058,
+  "lon": 57.2171523,
+  "tags": {
+    "historic": "memorial",
+    "int_name": "Bögenbay Batır",
+    "memorial": "statue",
+    "name": "Бөгенбай Батыр",
+    "name:kk": "Бөгенбай Батыр",
+    "name:ru": "Бокенбай Батыр"
+  }
+},
+{
+  "type": "node",
+  "id": 6538798258,
+  "lat": 50.2748152,
+  "lon": 57.1486644,
+  "tags": {
+    "artwork_type": "sculpture",
+    "name": "Анаға тағзым",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 6801191144,
+  "lat": 50.2845686,
+  "lon": 57.2404436,
+  "tags": {
+    "artwork_type": "sculpture",
+    "material": "metal",
+    "name": "Нефтяная скважина",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 8406776460,
+  "lat": 50.2903606,
+  "lon": 57.1639172,
+  "tags": {
+    "artwork_type": "installation",
+    "name": "Жер шары",
+    "name:ru": "Земной шар",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 8581952798,
+  "lat": 50.2835797,
+  "lon": 57.1872955,
+  "tags": {
+    "artwork_type": "sculpture",
+    "name": "Хан Шатыр",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 8582148437,
+  "lat": 50.2973176,
+  "lon": 57.1893991,
+  "tags": {
+    "name": "Этноаул",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "node",
+  "id": 8701087684,
+  "lat": 50.2465615,
+  "lon": 57.2498163,
+  "tags": {
+    "historic": "memorial",
+    "name": "Зинченко"
+  }
+},
+{
+  "type": "node",
+  "id": 8951205625,
+  "lat": 50.2825452,
+  "lon": 57.2158053,
+  "tags": {
+    "historic": "memorial",
+    "inscription": "В этом доме жил лучший участковый инспектор милиции г. Актобе, участник Великой Отечественной войны, ветеран МВД РК Калдыгулов Муса, 1921-1988",
+    "memorial": "plaque",
+    "name": "М. Калдыгулов"
+  }
+},
+{
+  "type": "node",
+  "id": 8951205626,
+  "lat": 50.2823064,
+  "lon": 57.2260512,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "plaque",
+    "name": "Мемориальная доска Герою Великой Отечественной Войны Кунбаеву Токмырзе"
+  }
+},
+{
+  "type": "node",
+  "id": 8953319386,
+  "lat": 50.2838948,
+  "lon": 57.2290845,
+  "tags": {
+    "historic": "memorial",
+    "inscription": "В этом здании в годы Великой Отечественной войны находился сортировочный эвакогоспиталь 3601",
+    "memorial": "plaque",
+    "name": "Эвакогоспиталь 3601"
+  }
+},
+{
+  "type": "node",
+  "id": 8953319388,
+  "lat": 50.2837686,
+  "lon": 57.2269596,
+  "tags": {
+    "historic": "memorial",
+    "inscription": "Бұл үйде көрнекті мемлекет және саяси қайраткер, белгілі ғалым-экономист, парламентаризм мен демократияның негізін қалаушылардың бірі, Қазақстан Республикасы Парламенті Мәжілісінің бірінші Төрағасы Марат Тұрдыбекұлы Оспанов тұрған",
+    "memorial": "plaque",
+    "name": "Марат Тұрдыбекұлы Оспанов",
+    "name:ru": "Марату Турдыбековичу Оспанову"
+  }
+},
+{
+  "type": "node",
+  "id": 8953319389,
+  "lat": 50.2837369,
+  "lon": 57.2275302,
+  "tags": {
+    "historic": "memorial",
+    "inscription": "Бұл үйде 1958-1991 жылдары ҚР белгілі мемлекет және қоғам қайраткері тұрған\nВ этом доме 1958-1991 годы жил известный государственный и общественный деятель РК",
+    "memorial": "plaque",
+    "name": "Өтеміс Алдабергенұлы Алдабергенов",
+    "name:ru": "Отемису Алдабергеновичу Алдабергенову"
+  }
+},
+{
+  "type": "node",
+  "id": 8953319390,
+  "lat": 50.2843776,
+  "lon": 57.2250330,
+  "tags": {
+    "historic": "memorial",
+    "inscription": "Здесь проходила первая всеказахстанская конференция советских работников, одобрившая меры направленные на создание Советской автономии Казахстана",
+    "memorial": "plaque"
+  }
+},
+{
+  "type": "node",
+  "id": 8953319391,
+  "lat": 50.2843562,
+  "lon": 57.2252865,
+  "tags": {
+    "historic": "memorial",
+    "inscription": "2 сентября 1919 года Войсками Туркестанского фронта город Актюбинск освобождён от Белогвардейцев",
+    "memorial": "plaque"
+  }
+},
+{
+  "type": "node",
+  "id": 8953319392,
+  "lat": 50.2840532,
+  "lon": 57.2243243,
+  "tags": {
+    "historic": "memorial",
+    "inscription": "Первая Сберегательная касса на территории современного Казахстана, 1923 год",
+    "memorial": "plaque"
+  }
+},
+{
+  "type": "node",
+  "id": 8953319393,
+  "lat": 50.2808470,
+  "lon": 57.2292097,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "plaque",
+    "name": "Р.И. Кутуевке",
+    "name:ru": "Р.И. Кутуеву"
+  }
+},
+{
+  "type": "node",
+  "id": 8953319394,
+  "lat": 50.2809483,
+  "lon": 57.2287385,
+  "tags": {
+    "artwork_type": "sculpture",
+    "material": "metal",
+    "memorial": "stele",
+    "name": "Ракета",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 8958958162,
+  "lat": 50.2937397,
+  "lon": 57.1979163,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "Қолбасшы Жалаңтөс Баһадүр",
+    "name:ru": "Полководец Жалантос Бахадур"
+  }
+},
+{
+  "type": "node",
+  "id": 8958958165,
+  "lat": 50.2915315,
+  "lon": 57.2020297,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "bust",
+    "name": "А. Смагулов"
+  }
+},
+{
+  "type": "node",
+  "id": 8959285972,
+  "lat": 50.2873593,
+  "lon": 57.2272579,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "plaque",
+    "name": "Орыс-қырғыз 2 класстық училищесі",
+    "name:ru": "Двухклассное русско-киргизское училище"
+  }
+},
+{
+  "type": "node",
+  "id": 8959285974,
+  "lat": 50.2875838,
+  "lon": 57.2250376,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "plaque",
+    "name": "Орыс-қырғыз әйелдер мектебі",
+    "name:ru": "Русско-киргизская женская школа"
+  }
+},
+{
+  "type": "node",
+  "id": 11768489168,
+  "lat": 50.2916871,
+  "lon": 57.1291035,
+  "tags": {
+    "historic": "memorial",
+    "name": "Ер Едіге"
+  }
+},
+{
+  "type": "node",
+  "id": 12378326833,
+  "lat": 50.2725702,
+  "lon": 57.2328508,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "bust",
+    "name": "Қожабай Жазықов",
+    "name:ru": "Кожабаю Жазыкову"
+  }
+},
+{
+  "type": "node",
+  "id": 12553436907,
+  "lat": 50.2866348,
+  "lon": 57.1886729,
+  "tags": {
+    "amenity": "fountain",
+    "fountain": "decorative",
+    "lit": "yes",
+    "name": "Музыкалық субұрқақ",
+    "name:kk": "Музыкалық субұрқақ",
+    "name:ru": "Музыкальный фонтан",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 12553436908,
+  "lat": 50.2860756,
+  "lon": 57.1870495,
+  "tags": {
+    "amenity": "fountain",
+    "fountain": "decorative",
+    "lit": "yes",
+    "name": "Музыкалық субұрқақ",
+    "name:kk": "Музыкалық субұрқақ",
+    "name:ru": "Музыкальный фонтан",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 12853937051,
+  "lat": 50.2960050,
+  "lon": 57.1491465,
+  "tags": {
+    "artist_name": "Жеңіс Жұбанқосов",
+    "height": "3.9",
+    "historic": "memorial",
+    "inscription": "Аққағаз Досжанова\n1893-1932",
+    "material": "bronze",
+    "memorial": "bust",
+    "name": "Аққағаз Досжанова",
+    "name:kk": "Аққағаз Досжанова",
+    "name:ru": "Аккагаз Досжанова",
+    "start_date": "2016-06-17",
+    "subject:wikipedia": "https://kk.wikipedia.org/wiki/%D0%90%D2%9B%D2%9B%D0%B0%D2%93%D0%B0%D0%B7_%D0%94%D0%BE%D1%81%D0%B6%D0%B0%D0%BD%D0%BE%D0%B2%D0%B0",
+    "website": "https://aktobenasledie.kz/kk/aqqaghaz-doszhanovanyng-eskertkish-muesini/"
+  }
+},
+{
+  "type": "node",
+  "id": 12889438365,
+  "lat": 50.3022383,
+  "lon": 57.1503741,
+  "tags": {
+    "height": "4.7",
+    "historic": "memorial",
+    "inscription": "Ta'y'elsiz qazaq elinin' qutqary'shylaryna tag'zym (Тәуелсіз қазақ елінің құтқарушыларына тағзым)",
+    "material": "bronze",
+    "memorial": "statue",
+    "name": "Құтқарушыларға арналған ескерткіш",
+    "name:kk": "Құтқарушыларға арналған ескерткіш",
+    "name:ru": "Памятник спасателям",
+    "start_date": "2019-10-25"
+  }
+},
+{
+  "type": "node",
+  "id": 12985315038,
+  "lat": 50.2951835,
+  "lon": 57.1579769,
+  "tags": {
+    "artist_name": "«Қайсар Relations» компаниясы",
+    "artwork_type": "installation",
+    "name": "Арман бала",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13140609904,
+  "lat": 50.2827017,
+  "lon": 57.1398371,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "stele",
+    "name": "Азаттықтың ақ таңы"
+  }
+},
+{
+  "type": "node",
+  "id": 13165019489,
+  "lat": 50.3175542,
+  "lon": 57.2155169,
+  "tags": {
+    "artwork_type": "installation",
+    "name": "Фортепиано",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13172596158,
+  "lat": 50.2917935,
+  "lon": 57.1615030,
+  "tags": {
+    "artwork_type": "mural",
+    "name": "Күнді бейнелеп жатқан қыз",
+    "name:ru": "Девочка, рисующая солнце",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13179765669,
+  "lat": 50.3167966,
+  "lon": 57.2103989,
+  "tags": {
+    "artwork_type": "installation",
+    "name": "Бір сен үшін тудым",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13190948011,
+  "lat": 50.2861141,
+  "lon": 57.2286396,
+  "tags": {
+    "artwork_type": "sculpture",
+    "name": "Бұғы",
+    "name:ru": "Олень",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13245425241,
+  "lat": 50.2857970,
+  "lon": 57.1948920,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "bust",
+    "name": "Н. А. Шайкеновке",
+    "name:ru": "Н. А. Шайкенову"
+  }
+},
+{
+  "type": "node",
+  "id": 13272715513,
+  "lat": 50.2901113,
+  "lon": 57.1936767,
+  "tags": {
+    "artwork_type": "installation",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13312924321,
+  "lat": 50.2758446,
+  "lon": 57.1868301,
+  "tags": {
+    "artwork_type": "mural",
+    "name": "Әлия Молдағұлова",
+    "name:ru": "Алия Молдагулова",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13312924322,
+  "lat": 50.2757496,
+  "lon": 57.1864691,
+  "tags": {
+    "artwork_type": "mural",
+    "name": "Сапура Мәтенқызы",
+    "name:ru": "Сапура Матенкызы",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13312924323,
+  "lat": 50.2756363,
+  "lon": 57.1860105,
+  "tags": {
+    "artwork_type": "mural",
+    "name": "Ғазиза Жұбанова",
+    "name:ru": "Газиза Жубанова",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13316907497,
+  "lat": 50.3014735,
+  "lon": 57.1581460,
+  "tags": {
+    "historic": "memorial",
+    "inscription": "Қазақстан Республикасының Мемлекеттік Гимні\nАлтын күн аспаны,\nАлтын дән даласы,\nЕрліктің дастаны,\nЕліме қарашы!\nЕжелден ер деген,\nДаңқымыз шықты ғой.\nНамысын бермеген,\nҚазағым мықты ғой!\n\nҚайырмасы:\n\nМенің елім, менің елім,\nГүлің болып егілемін,\nЖырың бол",
+    "man_made": "obelisk",
+    "memorial": "obelisk",
+    "name": "Қазақстан Республикасының Мемлекеттік Елтаңбасы",
+    "name:ru": "Государственный герб Республики Казахстан"
+  }
+},
+{
+  "type": "node",
+  "id": 13318787559,
+  "lat": 50.2867547,
+  "lon": 57.1926181,
+  "tags": {
+    "historic": "memorial",
+    "material": "stone",
+    "memorial": "stele",
+    "name": "Хачкар",
+    "stele": "khachkar"
+  }
+},
+{
+  "type": "node",
+  "id": 13319053198,
+  "lat": 50.2788089,
+  "lon": 57.1989465,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "plaque",
+    "name": "Зоя Космодемьянская"
+  }
+},
+{
+  "type": "node",
+  "id": 13331732907,
+  "lat": 50.2912908,
+  "lon": 57.2372885,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "Есет Көтібарұлы",
+    "name:ru": "Есету Котибарулы"
+  }
+},
+{
+  "type": "node",
+  "id": 13333712139,
+  "lat": 50.2787256,
+  "lon": 57.1963420,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "plaque",
+    "name": "Ғалымжан Жұмабайұлы Нұрышевке",
+    "name:ru": "Галымжану Жумабайулы Нурышеву"
+  }
+},
+{
+  "type": "node",
+  "id": 13333742675,
+  "lat": 50.2816624,
+  "lon": 57.1868210,
+  "tags": {
+    "artwork_type": "stone",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13333745986,
+  "lat": 50.2828053,
+  "lon": 57.1954628,
+  "tags": {
+    "historic": "memorial",
+    "inscription": "Ақтөбедегі \"32 жалпы білім беретін гимназияның\" Қазақстан Республикасы Үкіметінің 2017 жылғы 26 мамырдағы қаулысымен Қазақстан Республикасының еңбек сіңірген қызметкері Мария Кизатовна Курманалиева - осы гимназияның негізін қалаушы және бірінші директоры",
+    "memorial": "plaque",
+    "name": "Мария Қизатқызы Құрманалиеваға",
+    "name:ru": "Курманалиевой Марии Кизатовне"
+  }
+},
+{
+  "type": "node",
+  "id": 13340144036,
+  "lat": 50.2788497,
+  "lon": 57.1340506,
+  "tags": {
+    "artwork_type": "sculpture",
+    "name": "Сұлулық әлемді құтқарады",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13340144076,
+  "lat": 50.2771584,
+  "lon": 57.1401006,
+  "tags": {
+    "artwork_type": "installation",
+    "name": "Тайқазан",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13340144077,
+  "lat": 50.2769252,
+  "lon": 57.1394445,
+  "tags": {
+    "artwork_type": "installation",
+    "name": "Тайқазан",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13341843853,
+  "lat": 50.2905867,
+  "lon": 57.1622769,
+  "tags": {
+    "artwork_type": "installation",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13352601493,
+  "lat": 50.2947910,
+  "lon": 57.1556528,
+  "tags": {
+    "artwork_type": "statue",
+    "name": "Фемида",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13352601494,
+  "lat": 50.2948753,
+  "lon": 57.1556817,
+  "tags": {
+    "historic": "memorial",
+    "inscription": "Ер есімі - ел есінде!\nҰлы жеңіске 70 жыл!\nАқтөбе облысы судьяларының қауымдастығы атынан\n9 мамыр 2015 жыл",
+    "memorial": "war_memorial",
+    "name": "ҰОС жылдарында қаза тапқандарға арналған",
+    "name:ru": "Памятник погибшим в годы ВОВ",
+    "start_date": "2015-05-09"
+  }
+},
+{
+  "type": "node",
+  "id": 13352601495,
+  "lat": 50.2950129,
+  "lon": 57.1558377,
+  "tags": {
+    "historic": "memorial",
+    "inscription": "Биекенов Әбидолла Үмбетжанұлы",
+    "memorial": "bust",
+    "name": "Әбидолла Биекенов ескерткіші",
+    "name:ru": "А. Биекенову"
+  }
+},
+{
+  "type": "node",
+  "id": 13363288175,
+  "lat": 50.2841925,
+  "lon": 57.2265302,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "plaque",
+    "name": "Нұрлан Өтепұлы Балғымбаевке",
+    "name:ru": "Нурлану Утеповичу Балгимбаеву"
+  }
+},
+{
+  "type": "node",
+  "id": 13363475595,
+  "lat": 50.2851969,
+  "lon": 57.1791157,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "plaque",
+    "name": "Төлеу Алдияров",
+    "name:ru": "Тулеу Алдиярову"
+  }
+},
+{
+  "type": "node",
+  "id": 13366285393,
+  "lat": 50.2823895,
+  "lon": 57.2270902,
+  "tags": {
+    "artwork_type": "sculpture",
+    "name": "Қазақстан жолы кітабынан үзінді",
+    "name:ru": "Фрагмент из книги Казахстанский путь",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13366285394,
+  "lat": 50.2822656,
+  "lon": 57.2285553,
+  "tags": {
+    "artwork_type": "sculpture",
+    "name": "Теңге символы",
+    "name:ru": "Символ тенге",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13366311710,
+  "lat": 50.2813565,
+  "lon": 57.2186620,
+  "tags": {
+    "historic": "memorial",
+    "inscription": "В этом здании 26 января 1942 года на собрании трудящихся города выступал с речью писатель А.Н. Толстой",
+    "memorial": "plaque"
+  }
+},
+{
+  "type": "node",
+  "id": 13366311855,
+  "lat": 50.2988798,
+  "lon": 57.1476606,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "plaque",
+    "name": "Юрий Васильевич Бирючковқа",
+    "name:ru": "Юрию Васильевичу Бирючкову"
+  }
+},
+{
+  "type": "node",
+  "id": 13366311856,
+  "lat": 50.2989110,
+  "lon": 57.1477666,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "plaque",
+    "name": "Кзыл Жексенович Жанабаевке",
+    "name:ru": "Кзыл Жексеновичу Жанабаеву"
+  }
+},
+{
+  "type": "node",
+  "id": 13378001790,
+  "lat": 50.3018962,
+  "lon": 57.1595554,
+  "tags": {
+    "historic": "memorial",
+    "inscription": "Абай",
+    "memorial": "statue",
+    "name": "Абай Құнанбайұлы",
+    "name:ru": "Абаю Кунанбаеву"
+  }
+},
+{
+  "type": "node",
+  "id": 13380495088,
+  "lat": 50.2893496,
+  "lon": 57.1684804,
+  "tags": {
+    "artwork_type": "mural",
+    "name": "Қиын жағдайда шын батырлар көмекке келеді",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13383203829,
+  "lat": 50.2838054,
+  "lon": 57.1400483,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "stone"
+  }
+},
+{
+  "type": "node",
+  "id": 13383203830,
+  "lat": 50.2838507,
+  "lon": 57.1402114,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "stone"
+  }
+},
+{
+  "type": "node",
+  "id": 13383203831,
+  "lat": 50.2837088,
+  "lon": 57.1397415,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "stone"
+  }
+},
+{
+  "type": "node",
+  "id": 13383757242,
+  "lat": 50.2911559,
+  "lon": 57.1620624,
+  "tags": {
+    "artwork_type": "sculpture",
+    "name": "Құмыра",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13383757255,
+  "lat": 50.2907811,
+  "lon": 57.1624378,
+  "tags": {
+    "artwork_type": "sculpture",
+    "name": "Қобыз",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13383757256,
+  "lat": 50.2906201,
+  "lon": 57.1624913,
+  "tags": {
+    "artwork_type": "installation",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13386012890,
+  "lat": 50.2909859,
+  "lon": 57.1887872,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "plaque",
+    "name": "Өтеген Сейітұлы Сейітовке",
+    "name:ru": "Утегену Сеитовичу Сеитову"
+  }
+},
+{
+  "type": "node",
+  "id": 13388264248,
+  "lat": 50.2918037,
+  "lon": 57.1601232,
+  "tags": {
+    "artwork_type": "installation",
+    "name": "Доп",
+    "name:ru": "Мяч",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13394895199,
+  "lat": 50.2668252,
+  "lon": 57.2111770,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "plaque",
+    "name": "Вакуленко Анатолий Михайловичке",
+    "name:ru": "Вакуленко Анатолию Михайловичу"
+  }
+},
+{
+  "type": "node",
+  "id": 13394895200,
+  "lat": 50.2668728,
+  "lon": 57.2112652,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "plaque",
+    "name": "Иванов Александр Анатольевичке",
+    "name:ru": "Иванову Александру Анатольевичу"
+  }
+},
+{
+  "type": "node",
+  "id": 13394895205,
+  "lat": 50.2681491,
+  "lon": 57.2101636,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "plaque",
+    "name": "А. Ф. Наумов"
+  }
+},
+{
+  "type": "node",
+  "id": 13408737493,
+  "lat": 50.2881028,
+  "lon": 57.2301166,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "bust",
+    "name": "Мәншүк Мәметова",
+    "name:ru": "Маншук Маметовой"
+  }
+},
+{
+  "type": "node",
+  "id": 13410896583,
+  "lat": 50.2873495,
+  "lon": 57.1878894,
+  "tags": {
+    "artwork_type": "sculpture",
+    "height": "4.7",
+    "name": "Ақтөбе облысы кәрістерінің қазақ халқына алғысы",
+    "name:ru": "Благодарность казахскому народу от корейцев Актюбинской области",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13415107835,
+  "lat": 50.3154050,
+  "lon": 57.1376637,
+  "tags": {
+    "height": "3.87",
+    "historic": "memorial",
+    "inscription": "1949 - 1991. Семей ядролық сынақ полигонында зардап шеккен ақтөбелік ардагерлерге құрмет пен тағзым",
+    "memorial": "obelisk",
+    "name": "Семей ядролық сынақ полигонынан зардап шеккен ардагерлерге",
+    "name:ru": "Актюбинцам, пострадавшим от семипалатинского испытательного ядерного полигона",
+    "start_date": "2020"
+  }
+},
+{
+  "type": "node",
+  "id": 13439414673,
+  "lat": 50.2834899,
+  "lon": 57.1686354,
+  "tags": {
+    "artwork_type": "mural",
+    "name": "Спорт",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13439414674,
+  "lat": 50.2836390,
+  "lon": 57.1679598,
+  "tags": {
+    "artwork_type": "mural",
+    "name": "Спорт",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13452092150,
+  "lat": 50.2926329,
+  "lon": 57.1689087,
+  "tags": {
+    "artwork_type": "installation",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13452092195,
+  "lat": 50.2934348,
+  "lon": 57.1687492,
+  "tags": {
+    "artwork_type": "mural",
+    "name": "Балалар",
+    "name:ru": "Дети",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "node",
+  "id": 13784446108,
+  "lat": 50.2835587,
+  "lon": 57.2188278,
+  "tags": {
+    "name": "Геологическая выставка",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "node",
+  "id": 13897422337,
+  "lat": 50.2856606,
+  "lon": 57.2302900,
+  "tags": {
+    "historic": "memorial",
+    "name": "С. М. Киров"
+  }
+},
+{
+  "type": "way",
+  "id": 223233354,
+  "center": {
+    "lat": 50.2875857,
+    "lon": 57.1712460
+  },
+  "tags": {
+    "addr:city": "Ақтөбе",
+    "addr:housenumber": "74",
+    "addr:street": "Әбілқайыр Хан даңғылы",
+    "alt_name": "Көркем және сәндік-қолданбалы өнерінің Ақтөбе облысының мұражайы",
+    "alt_name:ru": "Актюбинский областной музей художественного и декоративно-прикладного искусства",
+    "building": "civic",
+    "contact:instagram": "aqtobemuseum",
+    "museum": "art",
+    "name": "Өнер музейі",
+    "name:ru": "Музей искусств",
+    "phone": "+7 7132 554753",
+    "start_date": "1981",
+    "tourism": "museum",
+    "website": "https://oner-muzei.kz/",
+    "wikipedia": "ru:Актюбинский областной музей художественного и декоративно-прикладного искусства"
+  }
+},
+{
+  "type": "way",
+  "id": 323517871,
+  "center": {
+    "lat": 50.2961108,
+    "lon": 57.1556023
+  },
+  "tags": {
+    "addr:city": "Ақтөбе",
+    "addr:housenumber": "46Б",
+    "addr:street": "Әбілқайыр Хан даңғылы",
+    "amenity": "place_of_worship",
+    "building": "mosque",
+    "building:levels": "3",
+    "denomination": "sunni",
+    "email": "nurdaulet_aktobe@mail.ru",
+    "name": "Нұрдәулет",
+    "name:en": "Nurdaulet",
+    "name:ru": "Нурдаулет",
+    "religion": "muslim",
+    "roof:colour": "blue",
+    "start_date": "1998",
+    "wikidata": "Q16676201",
+    "wikipedia": "ru:Мечеть Нурдаулет"
+  }
+},
+{
+  "type": "way",
+  "id": 349577439,
+  "center": {
+    "lat": 50.2882477,
+    "lon": 57.2228035
+  },
+  "tags": {
+    "addr:city": "Ақтөбе",
+    "addr:street": "Жанқожа Батыр көшесі",
+    "amenity": "place_of_worship",
+    "building": "church",
+    "building:levels": "1",
+    "denomination": "russian_orthodox",
+    "name": "Архангел Михаилдың ғибадатханасы",
+    "name:en": "Temple of Michael Archangel",
+    "name:ru": "Храм Архангела Михаила",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 358414485,
+  "center": {
+    "lat": 50.2818852,
+    "lon": 57.2363893
+  },
+  "tags": {
+    "addr:city": "Ақтөбе",
+    "addr:housenumber": "22",
+    "addr:street": "Шығанақ Берсиев көшесі",
+    "amenity": "place_of_worship",
+    "building": "mosque",
+    "denomination": "sunni",
+    "name": "Ақтөбе қалалық орталық мешіті",
+    "name:ru": "Центральная мечеть города Актобе",
+    "religion": "muslim",
+    "wikidata": "Q16715427"
+  }
+},
+{
+  "type": "way",
+  "id": 358567095,
+  "center": {
+    "lat": 50.2847287,
+    "lon": 57.1922351
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Ротонда",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "way",
+  "id": 358567097,
+  "center": {
+    "lat": 50.2842217,
+    "lon": 57.1915124
+  },
+  "tags": {
+    "building": "yes",
+    "layer": "1",
+    "name": "Шаңырақ",
+    "name:ru": "Шанырак",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "way",
+  "id": 358567100,
+  "center": {
+    "lat": 50.2835835,
+    "lon": 57.1905960
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Арка",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "way",
+  "id": 384977235,
+  "center": {
+    "lat": 50.2699334,
+    "lon": 57.2158416
+  },
+  "tags": {
+    "addr:housenumber": "60",
+    "addr:street": "Дербісәлі Беркімбаев көшесі",
+    "amenity": "place_of_worship",
+    "building": "temple",
+    "denomination": "roman_catholic",
+    "name": "Ізгі Бағушы шіркеуі",
+    "name:ru": "Храм Доброго Пастыря",
+    "operator": "Апостольская администратура Атырау",
+    "operator:type": "religious",
+    "phone": "+7 7132 963585",
+    "religion": "christian",
+    "start_date": "1983",
+    "website": "https://catholic-kazakhstan.org/",
+    "wikidata": "Q11803204",
+    "wikipedia": "ru:Храм Доброго Пастыря в Актобе"
+  }
+},
+{
+  "type": "way",
+  "id": 446350163,
+  "center": {
+    "lat": 50.3001809,
+    "lon": 57.1540607
+  },
+  "tags": {
+    "artist_name": "Ескен Сергебаев (мүсінші), Болат Егімбаев (сәулетші), Н.Қожағұлов (сәулетші)",
+    "height": "12.3",
+    "historic": "memorial",
+    "inscription": "Әбілқайыр хан",
+    "material": "bronze",
+    "memorial": "statue",
+    "name": "Әбілқайыр хан",
+    "name:ru": "Абилкайыр хану",
+    "start_date": "2020",
+    "wikipedia": "kk:Әбілқайыр хан (Кіші жүз)"
+  }
+},
+{
+  "type": "way",
+  "id": 552991682,
+  "center": {
+    "lat": 50.2843077,
+    "lon": 57.1482539
+  },
+  "tags": {
+    "location": "outdoor",
+    "museum": "aviation",
+    "name": "Әскери техникалар мұражайы",
+    "name:kk": "Әскери техникалар мұражайы",
+    "name:ru": "Музей авиатехники",
+    "operator": "Әуе қорғаныс күштерінің әскери институты",
+    "outdoor": "yes",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "way",
+  "id": 596440053,
+  "center": {
+    "lat": 50.2767846,
+    "lon": 57.1399816
+  },
+  "tags": {
+    "addr:city": "Ақтөбе",
+    "addr:housenumber": "3",
+    "addr:street": "Ораз Тәтеұлы көшесі",
+    "building": "museum",
+    "building:material": "stone",
+    "int_name": "Aqtöbe oblıstıq tarïxï-ölketanw murajayı",
+    "museum": "local",
+    "name": "Ақтөбе облыстық тарихи-өлкетану мұражайы",
+    "name:kk": "Ақтөбе облыстық тарихи-өлкетану мұражайы",
+    "name:ru": "Актюбинский областной историко-краеведческий музей",
+    "roof:shape": "flat",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "way",
+  "id": 1429451310,
+  "center": {
+    "lat": 50.2829267,
+    "lon": 57.1873368
+  },
+  "tags": {
+    "artwork_type": "mural",
+    "name": "Астана",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "way",
+  "id": 1443658826,
+  "center": {
+    "lat": 50.2868929,
+    "lon": 57.1915757
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "chapel",
+    "denomination": "orthodox",
+    "name": "Кішкентай шіркеу",
+    "name:ru": "Часовня",
+    "religion": "christian",
+    "roof:colour": "#7d877e"
+  }
+},
+{
+  "type": "way",
+  "id": 1450644503,
+  "center": {
+    "lat": 50.2817907,
+    "lon": 57.1891013
+  },
+  "tags": {
+    "addr:city": "Ақтөбе",
+    "addr:housenumber": "92",
+    "addr:street": "Әбілқайыр Хан даңғылы",
+    "amenity": "place_of_worship",
+    "building": "mosque",
+    "building:colour": "white",
+    "building:levels": "1",
+    "denomination": "sunni",
+    "name": "Нұр Ғасыр мешіті",
+    "name:en": "Nur Ghasyr mosque",
+    "name:kk": "Нұр Ғасыр мешіті",
+    "name:ru": "Мечеть Нур Гасыр",
+    "phone": "+7 7132 77-43-49",
+    "religion": "muslim",
+    "website": "https://nurgasyr.kz/",
+    "wheelchair": "limited",
+    "wikidata": "Q13668724",
+    "wikipedia": "ru:Мечеть Нур Гасыр"
+  }
+},
+{
+  "type": "way",
+  "id": 1451577783,
+  "center": {
+    "lat": 50.2870132,
+    "lon": 57.1922866
+  },
+  "tags": {
+    "addr:city": "Ақтөбе",
+    "addr:housenumber": "6",
+    "addr:street": "Мәншүк Мәметова көшесі",
+    "amenity": "place_of_worship",
+    "building": "religious",
+    "denomination": "orthodox",
+    "name": "Қасиетті Николай кафедралды соборы",
+    "name:en": "Saint Nicholas Cathedral",
+    "name:kk": "Қасиетті Николай кафедралды соборы",
+    "name:ru": "Свято-Никольский Собор",
+    "religion": "christian",
+    "website": "https://www.uralsk-eparhiya.kz/",
+    "wikidata": "Q1991322",
+    "wikipedia": "ru:Свято-Никольский кафедральный собор (Актобе)"
+  }
+},
+{
+  "type": "way",
+  "id": 1455929805,
+  "center": {
+    "lat": 50.2951025,
+    "lon": 57.1561212
+  },
+  "tags": {
+    "artwork_type": "mosaic",
+    "historic": "memorial",
+    "inscription": "Қазақстан жерінде \nАлға басқан шабыс бар,\nКүннен-күнге халқымда\nҰшан теңіз мұхиттай\nШалқып тасқан табыс бар\nН. Байғанин",
+    "memorial": "stele",
+    "name": "Н. Байғаниннің сөздері",
+    "name:ru": "Изречения Н. Байганина",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "way",
+  "id": 1461559321,
+  "center": {
+    "lat": 50.3005496,
+    "lon": 57.1551605
+  },
+  "tags": {
+    "area": "yes",
+    "artwork_type": "installation",
+    "name": "Аркалы LED-экран",
+    "name:ru": "Арочный LED-экран",
+    "tourism": "artwork"
+  }
+},
+{
+  "type": "way",
+  "id": 1461559322,
+  "center": {
+    "lat": 50.2806803,
+    "lon": 57.1855437
+  },
+  "tags": {
+    "area": "yes",
+    "artwork_type": "installation",
+    "name": "Аркалы LED-экран",
+    "name:ru": "Арочный LED-экран",
+    "tourism": "artwork"
+  }
+}
+
+  ]
+}
