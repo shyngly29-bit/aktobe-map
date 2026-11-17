@@ -21,3 +21,7 @@ _preview.html
 Thumbs.db
 .DS_Store
 __pycache__/
+
+# presentation/video tooling
+media/node_modules/
+media/package-lock.json

@@ -57,6 +57,15 @@ python make_v4.py && python make_v4_js.py && python make_v5.py && python make_v6
 
 Скрипты `build_streets.py`, `build_base.py`, `extra.py` и `fetch_images.py` пересобирают эти данные из OpenStreetMap и Wikimedia.
 
+## Ролик и презентация
+
+В папке `media/` лежат скрипты промо-ролика и презентации для ученика (казахский язык):
+
+- `make_video.py` собирает ролик MP4 (1920×1080, 84 с, титры без голоса) из кадров в `media/shots/`: `python make_video.py out.mp4`;
+- `build_deck.js` собирает презентацию PowerPoint на 11 слайдов с заметками докладчика из картинок в `media/deck_assets/`. Нужен pptxgenjs: `npm install` в папке `media`.
+
+Готовые файлы в репозиторий не входят.
+
 ## Источники и лицензии
 
 - Картографические данные: © участники [OpenStreetMap](https://www.openstreetmap.org/copyright), лицензия ODbL.
